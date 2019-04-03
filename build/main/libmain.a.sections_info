@@ -1,0 +1,84 @@
+In archive /home/fast/esp/hello_world/build/main/libmain.a:
+
+hello_world_main.o:     file format elf32-xtensa-le
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .literal.wifi_sniffer_packet_handler 00000024  00000000  00000000  00000034  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+  1 .literal.event_handler 00000010  00000000  00000000  00000058  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+  2 .literal.wifi_sniffer_set_channel 00000004  00000000  00000000  00000068  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+  3 .literal.wifi_sniffer_init 000000c8  00000000  00000000  0000006c  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+  4 .literal.mqtt_app_start 00000028  00000000  00000000  00000134  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+  5 .literal.mqtt_event_handler 00000094  00000000  00000000  0000015c  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+  6 .literal.app_main 00000008  00000000  00000000  000001f0  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+  7 .text         00000000  00000000  00000000  000001f8  2**0
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  8 .data         00000000  00000000  00000000  000001f8  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  9 .bss          00000000  00000000  00000000  000001f8  2**0
+                  ALLOC
+ 10 .rodata.str1.4 00000454  00000000  00000000  000001f8  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+ 11 .text.wifi_sniffer_packet_handler 000000ca  00000000  00000000  0000064c  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+ 12 .text.event_handler 00000039  00000000  00000000  00000718  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+ 13 .text.wifi_sniffer_set_channel 0000000f  00000000  00000000  00000754  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+ 14 .rodata       00000060  00000000  00000000  00000764  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+ 15 .text.wifi_sniffer_init 000001f6  00000000  00000000  000007c4  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+ 16 .text.mqtt_app_start 0000004c  00000000  00000000  000009bc  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+ 17 .text.mqtt_event_handler 0000015e  00000000  00000000  00000a08  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+ 18 .rodata.mqtt_event_handler 0000001c  00000000  00000000  00000b68  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, DATA
+ 19 .text.app_main 00000011  00000000  00000000  00000b84  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+ 20 .rodata.__func__$8434 00000012  00000000  00000000  00000b98  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+ 21 .rodata.CONNECTED_BIT 00000004  00000000  00000000  00000bac  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+ 22 .bss.wifi_event_group 00000004  00000000  00000000  00000bb0  2**2
+                  ALLOC
+ 23 .data.mask    00000001  00000000  00000000  00000bb0  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+ 24 .bss.i        00000004  00000000  00000000  00000bb4  2**2
+                  ALLOC
+ 25 .data.channel 00000001  00000000  00000000  00000bb4  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+ 26 .bss.level    00000001  00000000  00000000  00000bb5  2**0
+                  ALLOC
+ 27 .debug_frame  000000b8  00000000  00000000  00000bb8  2**2
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+ 28 .debug_info   000027f7  00000000  00000000  00000c70  2**0
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+ 29 .debug_abbrev 00000342  00000000  00000000  00003467  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 30 .debug_loc    00000258  00000000  00000000  000037a9  2**0
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+ 31 .debug_aranges 00000050  00000000  00000000  00003a01  2**0
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+ 32 .debug_ranges 00000040  00000000  00000000  00003a51  2**0
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+ 33 .debug_line   000006ca  00000000  00000000  00003a91  2**0
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+ 34 .debug_str    00001dee  00000000  00000000  0000415b  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 35 .comment      0000003b  00000000  00000000  00005f49  2**0
+                  CONTENTS, READONLY
+ 36 .xtensa.info  00000038  00000000  00000000  00005f84  2**0
+                  CONTENTS, READONLY
+ 37 .xt.lit       00000038  00000000  00000000  00005fbc  2**0
+                  CONTENTS, RELOC, READONLY
+ 38 .xt.prop      000002c4  00000000  00000000  00005ff4  2**0
+                  CONTENTS, RELOC, READONLY

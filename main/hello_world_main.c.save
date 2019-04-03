@@ -1,0 +1,158 @@
+#include "freertos/FreeRTOS.h"
+#include "esp_wifi.h"
+#include "esp_wifi_types.h"
+#include "esp_system.h"
+#include "esp_event.h"
+#include "esp_event_loop.h"
+#include "nvs_flash.h"
+#include "driver/gpio.h"
+#include <arpa/inet.h>
+
+#define LED_GPIO_PIN                     5
+#define WIFI_CHANNEL_SWITCH_INTERVAL  (500)
+#define WIFI_CHANNEL_MAX               (13)
+
+uint8_t level = 0, channel = 1;
+int i =0;
+
+//static wifi_country_t wifi_country = WIFI_COUNTRY_EU;
+
+uint8_t mask = 1;
+
+typedef struct{
+ uint8_t t;
+ uint8_t l;
+ uint8_t *v;
+} tlv_t;
+
+typedef struct {
+ unsigned version:2;
+ unsigned type:2;
+ unsigned subtype:4;
+ unsigned to_ds:1;
+ unsigned from_ds:1;
+ unsigned more_frag:1;
+ unsigned retry:1;
+ unsigned power_mgmt:1;
+ unsigned more_data:1;
+ unsigned wep:1;
+ unsigned order:1;
+} frame_control_t;
+
+typedef struct {
+  unsigned frame_ctrl:16;
+  unsigned duration_id:16;
+  uint8_t addr1[6]; /* receiver address */ //6 BYTES
+  uint8_t addr2[6]; /* sender address */
+  uint8_t addr3[6]; /* filtering address */
+  unsigned sequence_ctrl:16;
+  uint8_t addr4[6]; /* optional */
+} wifi_ieee80211_mac_hdr_t;
+
+typedef struct {
+  wifi_ieee80211_mac_hdr_t hdr; // 24 byte
+  uint8_t *payload;
+  //uint8_t payload[0]; /* network data ended with 4 bytes csum (CRC32) */
+} wifi_ieee80211_packet_t;
+
+static esp_err_t event_handler(void *ctx, system_event_t *event);
+static void wifi_sniffer_init(void);
+static void wifi_sniffer_set_channel(uint8_t channel);
+static void wifi_sniffer_packet_handler(void *buff, wifi_promiscuous_pkt_type_t type);
+
+esp_err_t event_handler(void *ctx, system_event_t *event)
+{
+  return ESP_OK;
+}
+
+void wifi_sniffer_init(void)
+{
+  nvs_flash_init();
+  tcpip_adapter_init();
+  ESP_ERROR_CHECK( esp_event_loop_init(event_handler, NULL) );
+  wifi_init_config_t cfg = WIFI_INIT_CONFIG_DEFAULT();
+  ESP_ERROR_CHECK( esp_wifi_init(&cfg) );
+  //ESP_ERROR_CHECK( esp_wifi_set_country(*wifi_country) ); /* set country for channel range [1, 13] */
+  ESP_ERROR_CHECK( esp_wifi_set_storage(WIFI_STORAGE_RAM) );
+  ESP_ERROR_CHECK( esp_wifi_set_mode(WIFI_MODE_AP) );
+  ESP_ERROR_CHECK( esp_wifi_start() );
+
+  esp_wifi_set_event_mask(WIFI_EVENT_MASK_ALL);
+
+  wifi_promiscuous_filter_t prom_filter;
+  prom_filter.filter_mask = WIFI_PROMIS_FILTER_MASK_MGMT;
+  esp_wifi_set_promiscuous_filter(&prom_filter);
+  esp_wifi_set_promiscuous_rx_cb(&wifi_sniffer_packet_handler);
+  esp_wifi_set_promiscuous(true);
+}
+
+void wifi_sniffer_set_channel(uint8_t channel)
+{
+  esp_wifi_set_channel(channel, WIFI_SECOND_CHAN_NONE);
+}
+
+void wifi_sniffer_packet_handler(void* buff, wifi_promiscuous_pkt_type_t type)
+{
+  const wifi_promiscuous_pkt_t *ppkt = (wifi_promiscuous_pkt_t *)buff;
+  const wifi_ieee80211_packet_t *ipkt = (wifi_ieee80211_packet_t *)ppkt->payload;
+  const wifi_ieee80211_mac_hdr_t *hdr = &ipkt->hdr;
+
+  uint16_t frame_ctr = (uint16_t)(hdr->frame_ctrl);
+  frame_control_t *frame_ctr_str = (frame_control_t *)&frame_ctr;
+
+  if(frame_ctr_str->type!=0 || frame_ctr_str->subtype!=4){
+	return;
+  }
+
+  printf("\033[22;31mPROBE REQUEST!\033[0m\n");
+
+  printf("Packet length: %d\n",pkt_length);
+
+  /*int tlv_counter = 0;
+  while(tlv_counter < payload_length){
+	tlv_t *tlv = (tlv_t *)(&ipkt->payload+tlv_counter);
+        printf("T: %d, L: %d.\n",tlv->t, tlv->l);
+        tlv_counter += tlv->l+2;
+  }*/_t
+	uint
+	tlv_t *tlv = (tlv_t *)(&ipkt->payload);
+	printf("T: %d, L: %d, V: ",tlv->t, tlv->l);
+	for(int i=0; i< tlv->l)
+
+  /*for(int i = 0; i < 16; i++){
+	unsigned num = 0;
+	num = (frame_ctr & (mask<<i))>>i;
+  	printf("%d%c",num,i<15?':':' ');
+  }
+  printf("\n");
+
+  printf("Version: %d, ", frame_ctr_str->version);
+  printf("Type: %d, ", frame_ctr_str->type);
+  printf("Subtype: %d.\n", frame_ctr_str->subtype);*/
+
+	printf("CHAN=%02d, RSSI=%02d, TIMESTAMP=%u,"
+	" ADDR1=%02x:%02x:%02x:%02x:%02x:%02x,"
+	" ADDR2=%02x:%02x:%02x:%02x:%02x:%02x,"
+	" ADDR3=%02x:%02x:%02x:%02x:%02x:%02x,"
+	" FRAME=%u\n",
+	ppkt->rx_ctrl.channel,
+	ppkt->rx_ctrl.rssi,
+	ppkt->rx_ctrl.timestamp,
+	// ADDR1 
+	hdr->addr1[0],hdr->addr1[1],hdr->addr1[2],
+	hdr->addr1[3],hdr->addr1[4],hdr->addr1[5],
+	// ADDR2 
+	hdr->addr2[0],hdr->addr2[1],hdr->addr2[2],
+	hdr->addr2[3],hdr->addr2[4],hdr->addr2[5],
+	// ADDR3 
+	hdr->addr3[0],hdr->addr3[1],hdr->addr3[2],
+	hdr->addr3[3],hdr->addr3[4],hdr->addr3[5],
+	hdr->frame_ctrl
+	);
+
+}
+
+void app_main(){
+  wifi_sniffer_init();
+  vTaskDelay(WIFI_CHANNEL_SWITCH_INTERVAL / portTICK_PERIOD_MS);
+}
