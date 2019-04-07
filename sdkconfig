@@ -90,15 +90,10 @@ CONFIG_MONITOR_BAUD_OTHER_VAL=115200
 CONFIG_MONITOR_BAUD=115200
 
 #
-# Custom configuration
+# Config variables
 #
-CONFIG_StringValue="ciao"
-CONFIG_IntValue=40
-CONFIG_HexValue=0x1
-CONFIG_BoolValue=y
-CONFIG_CHOICE_1=
-CONFIG_CHOICE_2=
-CONFIG_CHOICE_3=y
+CONFIG_WIFI_SSID="MSM-Wireless"
+CONFIG_WIFI_PSW="CiaoComeStai80171"
 
 #
 # Partition Table

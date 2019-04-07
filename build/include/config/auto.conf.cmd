@@ -34,7 +34,7 @@ deps_config := \
 	/home/fast/esp/esp-idf/components/app_update/Kconfig.projbuild \
 	/home/fast/esp/esp-idf/components/bootloader/Kconfig.projbuild \
 	/home/fast/esp/esp-idf/components/esptool_py/Kconfig.projbuild \
-	/home/fast/esp/hello_world/main/Kconfig.projbuild \
+	/home/fast/esp/hello_world_git/main/Kconfig.projbuild \
 	/home/fast/esp/esp-idf/components/partition_table/Kconfig.projbuild \
 	/home/fast/esp/esp-idf/Kconfig
 

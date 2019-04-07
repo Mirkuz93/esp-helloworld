@@ -21,6 +21,7 @@
 #include "md5.h"
 #include "driver/gpio.h"
 #include "sdkconfig.h"
+#include "apps/sntp/sntp.h"
 
 #include <stdio.h>
 #include <stddef.h>
@@ -40,9 +41,6 @@ uint8_t toBlink = 0;
 
 #define WIFI_CHANNEL_SWITCH_INTERVAL  (500)
 #define WIFI_CHANNEL_MAX               (13)
-
-#define WIFI_SSID "MSM-Wireless"
-#define WIFI_PASS "CiaoComeStai80171"
 
 static const char *TAG = "ESPLOG";
 
@@ -88,9 +86,13 @@ typedef struct {
 
 static void blink_task(void *pvParameter);
 static TaskHandle_t xHandle_led = NULL;
+static void time_init(void);
+static void initialize_sntp(void);
+static void obtain_time(void);
 
 static esp_err_t event_handler(void *ctx, system_event_t *event);
-static void wifi_sniffer_init(void);
+static void wifi_init(void);
+static void sniffer_init(void);
 static void wifi_sniffer_set_channel(uint8_t channel);
 static void wifi_sniffer_packet_handler(void *buff, wifi_promiscuous_pkt_type_t type);
 
@@ -140,6 +142,54 @@ esp_err_t event_handler(void *ctx, system_event_t *event)
 		break;
 	}
   return ESP_OK;
+}
+
+static void time_init()
+{
+	time_t now;
+    struct tm timeinfo;
+    char strftime_buf[64];
+
+	ESP_LOGI(TAG, "Connecting to WiFi and getting time over NTP.");
+	obtain_time();
+	time(&now);  //update 'now' variable with current time
+
+    //setting timezone to Greenwich
+    setenv("TZ", "GMT0BST,M3.5.0/1,M10.5.0", 1);
+    tzset();
+    localtime_r(&now, &timeinfo);
+    strftime(strftime_buf, sizeof(strftime_buf), "%c", &timeinfo);
+    ESP_LOGI(TAG, "TIME INFO: The Greenwich date/time is: %s", strftime_buf);
+}
+
+static void obtain_time()
+{
+    time_t now = 0;
+    struct tm timeinfo = { 0 };
+    int retry = 0;
+    const int retry_count = 15;
+
+    initialize_sntp();
+
+    //wait for time to be set
+    while(timeinfo.tm_year < (2016 - 1900) && ++retry < retry_count) {
+        ESP_LOGI(TAG, "Waiting for system time to be set... (%d/%d)", retry, retry_count);
+        vTaskDelay(2000 / portTICK_PERIOD_MS);
+        time(&now);
+        localtime_r(&now, &timeinfo);
+    }
+
+    if(retry >= retry_count){ //can't set time
+    		ESP_LOGI(TAG, "No response from server after several time. Impossible to set current time");
+    		esp_restart();
+    }
+}
+
+static void initialize_sntp()
+{
+    sntp_setoperatingmode(SNTP_OPMODE_POLL); //automatically request time after 1h
+    sntp_setservername(0, "pool.ntp.org");
+    sntp_init();
 }
 
 static esp_err_t mqtt_event_handler(esp_mqtt_event_handle_t event)
@@ -199,7 +249,20 @@ static void mqtt_app_start(void)
     esp_mqtt_client_start(client);
 }
 
-void wifi_sniffer_init(void)
+void sniffer_init(void){
+
+	printf("initializing sniffer...\n");
+	
+	wifi_promiscuous_filter_t prom_filter;
+  prom_filter.filter_mask = WIFI_PROMIS_FILTER_MASK_MGMT;
+  esp_wifi_set_promiscuous_filter(&prom_filter);
+  esp_wifi_set_promiscuous_rx_cb(&wifi_sniffer_packet_handler);
+  esp_wifi_set_promiscuous(true);
+  
+  printf("sniffer initialized.\n");
+}
+
+void wifi_init(void)
 {
 	wifi_event_group = xEventGroupCreate();
   tcpip_adapter_init();
@@ -214,20 +277,14 @@ void wifi_sniffer_init(void)
 
 	wifi_config_t wifi_config = {
 		.sta = {
-		    .ssid = WIFI_SSID,
-		    .password = WIFI_PASS,
+		    .ssid = CONFIG_WIFI_SSID,
+			.password = CONFIG_WIFI_PSW,
 		},
 	    };
 	ESP_ERROR_CHECK(esp_wifi_set_config(ESP_IF_WIFI_STA, &wifi_config));
 
 
   esp_wifi_set_event_mask(WIFI_EVENT_MASK_ALL);
-
-  wifi_promiscuous_filter_t prom_filter;
-  prom_filter.filter_mask = WIFI_PROMIS_FILTER_MASK_MGMT;
-  esp_wifi_set_promiscuous_filter(&prom_filter);
-  esp_wifi_set_promiscuous_rx_cb(&wifi_sniffer_packet_handler);
-  esp_wifi_set_promiscuous(true);
 
 	ESP_ERROR_CHECK( esp_wifi_start() );
 
@@ -240,8 +297,6 @@ void wifi_sniffer_init(void)
 	tcpip_adapter_ip_info_t tcp_arg_1;
 	tcpip_adapter_get_ip_info(TCPIP_ADAPTER_IF_STA, &tcp_arg_1);
 	printf("ip address: %d.%d.%d.%d\n", IP2STR(&tcp_arg_1.ip));
-
-	
 
 }
 
@@ -304,7 +359,11 @@ void app_main(){
 	
 	xTaskCreate(&blink_task, "blink_task", configMINIMAL_STACK_SIZE, NULL, 5, &xHandle_led);
 	
-	wifi_sniffer_init();
+	wifi_init();
+	
+	time_init(); //initializing time (current data time)
+	
+	sniffer_init();
 
 	mqtt_app_start();
 
