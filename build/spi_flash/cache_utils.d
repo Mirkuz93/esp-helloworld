@@ -16,7 +16,7 @@ cache_utils.o: /home/fast/esp/esp-idf/components/spi_flash/cache_utils.c \
  /home/fast/esp/esp-idf/components/newlib/include/machine/stdlib.h \
  /home/fast/esp/esp-idf/components/newlib/include/alloca.h \
  /home/fast/esp/esp-idf/components/newlib/platform_include/assert.h \
- /home/fast/esp/hello_world/build/include/sdkconfig.h \
+ /home/fast/esp/hello_world_git/build/include/sdkconfig.h \
  /home/fast/esp/esp-idf/components/newlib/include/assert.h \
  /home/fast/esp/esp-idf/components/newlib/include/string.h \
  /home/fast/esp/esp-idf/components/newlib/include/sys/string.h \
@@ -129,7 +129,7 @@ cache_utils.o: /home/fast/esp/esp-idf/components/spi_flash/cache_utils.c \
 
 /home/fast/esp/esp-idf/components/newlib/platform_include/assert.h:
 
-/home/fast/esp/hello_world/build/include/sdkconfig.h:
+/home/fast/esp/hello_world_git/build/include/sdkconfig.h:
 
 /home/fast/esp/esp-idf/components/newlib/include/assert.h:
 

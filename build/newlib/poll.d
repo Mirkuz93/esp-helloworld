@@ -26,7 +26,7 @@ poll.o: /home/fast/esp/esp-idf/components/newlib/poll.c \
  /home/fast/esp/esp-idf/components/freertos/include/freertos/FreeRTOS.h \
  /home/fast/esp/esp-idf/components/newlib/include/sys/reent.h \
  /home/fast/esp/esp-idf/components/freertos/include/freertos/FreeRTOSConfig.h \
- /home/fast/esp/hello_world/build/include/sdkconfig.h \
+ /home/fast/esp/hello_world_git/build/include/sdkconfig.h \
  /home/fast/esp/esp-idf/components/freertos/include/freertos/xtensa_config.h \
  /home/fast/esp/esp-idf/components/esp32/include/xtensa/hal.h \
  /home/fast/esp/esp-idf/components/esp32/include/xtensa/config/core.h \
@@ -149,7 +149,7 @@ poll.o: /home/fast/esp/esp-idf/components/newlib/poll.c \
 
 /home/fast/esp/esp-idf/components/freertos/include/freertos/FreeRTOSConfig.h:
 
-/home/fast/esp/hello_world/build/include/sdkconfig.h:
+/home/fast/esp/hello_world_git/build/include/sdkconfig.h:
 
 /home/fast/esp/esp-idf/components/freertos/include/freertos/xtensa_config.h:
 

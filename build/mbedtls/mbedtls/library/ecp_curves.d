@@ -1,7 +1,7 @@
 mbedtls/library/ecp_curves.o: \
  /home/fast/esp/esp-idf/components/mbedtls/mbedtls/library/ecp_curves.c \
  /home/fast/esp/esp-idf/components/mbedtls/port/include/mbedtls/esp_config.h \
- /home/fast/esp/hello_world/build/include/sdkconfig.h \
+ /home/fast/esp/hello_world_git/build/include/sdkconfig.h \
  /home/fast/esp/esp-idf/components/mbedtls/port/include/esp_mem.h \
  /home/fast/esp/esp-idf/components/newlib/include/stdlib.h \
  /home/fast/esp/esp-idf/components/newlib/include/machine/ieeefp.h \
@@ -35,7 +35,7 @@ mbedtls/library/ecp_curves.o: \
 
 /home/fast/esp/esp-idf/components/mbedtls/port/include/mbedtls/esp_config.h:
 
-/home/fast/esp/hello_world/build/include/sdkconfig.h:
+/home/fast/esp/hello_world_git/build/include/sdkconfig.h:
 
 /home/fast/esp/esp-idf/components/mbedtls/port/include/esp_mem.h:
 

@@ -11,7 +11,7 @@ sleep_modes.o: /home/fast/esp/esp-idf/components/esp32/sleep_modes.c \
  /home/fast/esp/esp-idf/components/newlib/include/machine/endian.h \
  /home/fast/esp/esp-idf/components/newlib/include/machine/param.h \
  /home/fast/esp/esp-idf/components/esp32/include/esp_attr.h \
- /home/fast/esp/hello_world/build/include/sdkconfig.h \
+ /home/fast/esp/hello_world_git/build/include/sdkconfig.h \
  /home/fast/esp/esp-idf/components/esp32/include/esp_sleep.h \
  /home/fast/esp/esp-idf/components/newlib/include/stdint.h \
  /home/fast/esp/esp-idf/components/newlib/include/machine/_default_types.h \
@@ -141,7 +141,7 @@ sleep_modes.o: /home/fast/esp/esp-idf/components/esp32/sleep_modes.c \
 
 /home/fast/esp/esp-idf/components/esp32/include/esp_attr.h:
 
-/home/fast/esp/hello_world/build/include/sdkconfig.h:
+/home/fast/esp/hello_world_git/build/include/sdkconfig.h:
 
 /home/fast/esp/esp-idf/components/esp32/include/esp_sleep.h:
 

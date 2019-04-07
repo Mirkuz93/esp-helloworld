@@ -20,7 +20,7 @@ heap_caps_init.o: /home/fast/esp/esp-idf/components/heap/heap_caps_init.c \
  /home/fast/esp/esp-idf/components/newlib/include/sys/_intsup.h \
  /home/fast/esp/esp-idf/components/freertos/include/freertos/FreeRTOS.h \
  /home/fast/esp/esp-idf/components/freertos/include/freertos/FreeRTOSConfig.h \
- /home/fast/esp/hello_world/build/include/sdkconfig.h \
+ /home/fast/esp/hello_world_git/build/include/sdkconfig.h \
  /home/fast/esp/esp-idf/components/freertos/include/freertos/xtensa_config.h \
  /home/fast/esp/esp-idf/components/esp32/include/xtensa/hal.h \
  /home/fast/esp/esp-idf/components/esp32/include/xtensa/config/core.h \
@@ -128,7 +128,7 @@ heap_caps_init.o: /home/fast/esp/esp-idf/components/heap/heap_caps_init.c \
 
 /home/fast/esp/esp-idf/components/freertos/include/freertos/FreeRTOSConfig.h:
 
-/home/fast/esp/hello_world/build/include/sdkconfig.h:
+/home/fast/esp/hello_world_git/build/include/sdkconfig.h:
 
 /home/fast/esp/esp-idf/components/freertos/include/freertos/xtensa_config.h:
 

@@ -23,7 +23,7 @@ ulp.o: /home/fast/esp/esp-idf/components/ulp/ulp.c \
  /home/fast/esp/esp-idf/components/newlib/include/machine/stdlib.h \
  /home/fast/esp/esp-idf/components/newlib/include/alloca.h \
  /home/fast/esp/esp-idf/components/esp32/include/esp_attr.h \
- /home/fast/esp/hello_world/build/include/sdkconfig.h \
+ /home/fast/esp/hello_world_git/build/include/sdkconfig.h \
  /home/fast/esp/esp-idf/components/esp32/include/esp_err.h \
  /home/fast/esp/esp-idf/components/newlib/include/stdint.h \
  /home/fast/esp/esp-idf/components/newlib/include/sys/_intsup.h \
@@ -89,7 +89,7 @@ ulp.o: /home/fast/esp/esp-idf/components/ulp/ulp.c \
 
 /home/fast/esp/esp-idf/components/esp32/include/esp_attr.h:
 
-/home/fast/esp/hello_world/build/include/sdkconfig.h:
+/home/fast/esp/hello_world_git/build/include/sdkconfig.h:
 
 /home/fast/esp/esp-idf/components/esp32/include/esp_err.h:
 

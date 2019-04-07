@@ -22,7 +22,7 @@ WL_Flash.o: /home/fast/esp/esp-idf/components/wear_levelling/WL_Flash.cpp \
  /home/fast/esp/esp-idf/components/newlib/include/sys/_intsup.h \
  /home/fast/esp/esp-idf/components/esp32/include/esp_err.h \
  /home/fast/esp/esp-idf/components/newlib/platform_include/assert.h \
- /home/fast/esp/hello_world/build/include/sdkconfig.h \
+ /home/fast/esp/hello_world_git/build/include/sdkconfig.h \
  /home/fast/esp/esp-idf/components/newlib/include/stdlib.h \
  /home/fast/esp/esp-idf/components/newlib/include/machine/stdlib.h \
  /home/fast/esp/esp-idf/components/newlib/include/alloca.h \
@@ -114,7 +114,7 @@ WL_Flash.o: /home/fast/esp/esp-idf/components/wear_levelling/WL_Flash.cpp \
 
 /home/fast/esp/esp-idf/components/newlib/platform_include/assert.h:
 
-/home/fast/esp/hello_world/build/include/sdkconfig.h:
+/home/fast/esp/hello_world_git/build/include/sdkconfig.h:
 
 /home/fast/esp/esp-idf/components/newlib/include/stdlib.h:
 

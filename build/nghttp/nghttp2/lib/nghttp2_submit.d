@@ -31,7 +31,7 @@ nghttp2/lib/nghttp2_submit.o: \
  /home/fast/esp/esp-idf/components/newlib/include/stdint.h \
  /home/fast/esp/esp-idf/components/nghttp/port/include/nghttp2/nghttp2ver.h \
  /home/fast/esp/esp-idf/components/newlib/platform_include/assert.h \
- /home/fast/esp/hello_world/build/include/sdkconfig.h \
+ /home/fast/esp/hello_world_git/build/include/sdkconfig.h \
  /home/fast/esp/esp-idf/components/newlib/include/assert.h \
  /home/fast/esp/esp-idf/components/nghttp/nghttp2/lib/nghttp2_session.h \
  /home/fast/esp/esp-idf/components/nghttp/nghttp2/lib/nghttp2_map.h \
@@ -111,7 +111,7 @@ nghttp2/lib/nghttp2_submit.o: \
 
 /home/fast/esp/esp-idf/components/newlib/platform_include/assert.h:
 
-/home/fast/esp/hello_world/build/include/sdkconfig.h:
+/home/fast/esp/hello_world_git/build/include/sdkconfig.h:
 
 /home/fast/esp/esp-idf/components/newlib/include/assert.h:
 

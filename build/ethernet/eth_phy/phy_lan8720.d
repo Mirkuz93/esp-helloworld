@@ -5,7 +5,7 @@ eth_phy/phy_lan8720.o: \
  /home/fast/esp/esp-idf/components/newlib/include/machine/_default_types.h \
  /home/fast/esp/esp-idf/components/newlib/include/sys/features.h \
  /home/fast/esp/esp-idf/components/newlib/include/sys/_intsup.h \
- /home/fast/esp/hello_world/build/include/sdkconfig.h \
+ /home/fast/esp/hello_world_git/build/include/sdkconfig.h \
  /home/fast/esp/esp-idf/components/esp32/include/rom/ets_sys.h \
  /home/fast/esp/esp-idf/components/soc/esp32/include/soc/soc.h \
  /home/fast/esp/esp-idf/components/esp32/include/esp_assert.h \
@@ -48,7 +48,7 @@ eth_phy/phy_lan8720.o: \
 
 /home/fast/esp/esp-idf/components/newlib/include/sys/_intsup.h:
 
-/home/fast/esp/hello_world/build/include/sdkconfig.h:
+/home/fast/esp/hello_world_git/build/include/sdkconfig.h:
 
 /home/fast/esp/esp-idf/components/esp32/include/rom/ets_sys.h:
 

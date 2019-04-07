@@ -31,7 +31,7 @@ lib/http_auth.o: \
  /home/fast/esp/esp-idf/components/esp32/include/rom/queue.h \
  /home/fast/esp/esp-idf/components/esp32/include/esp_err.h \
  /home/fast/esp/esp-idf/components/newlib/platform_include/assert.h \
- /home/fast/esp/hello_world/build/include/sdkconfig.h \
+ /home/fast/esp/hello_world_git/build/include/sdkconfig.h \
  /home/fast/esp/esp-idf/components/newlib/include/assert.h \
  /home/fast/esp/esp-idf/components/esp32/include/esp_interface.h \
  /home/fast/esp/esp-idf/components/lwip/lwip/src/include/lwip/ip_addr.h \
@@ -195,7 +195,7 @@ lib/http_auth.o: \
 
 /home/fast/esp/esp-idf/components/newlib/platform_include/assert.h:
 
-/home/fast/esp/hello_world/build/include/sdkconfig.h:
+/home/fast/esp/hello_world_git/build/include/sdkconfig.h:
 
 /home/fast/esp/esp-idf/components/newlib/include/assert.h:
 

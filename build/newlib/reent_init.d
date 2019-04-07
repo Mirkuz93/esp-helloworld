@@ -15,7 +15,7 @@ reent_init.o: /home/fast/esp/esp-idf/components/newlib/reent_init.c \
  /home/fast/esp/esp-idf/components/newlib/include/sys/cdefs.h \
  /home/fast/esp/esp-idf/components/newlib/include/sys/string.h \
  /home/fast/esp/esp-idf/components/esp32/include/esp_attr.h \
- /home/fast/esp/hello_world/build/include/sdkconfig.h
+ /home/fast/esp/hello_world_git/build/include/sdkconfig.h
 
 /home/fast/esp/esp-idf/components/newlib/include/string.h:
 
@@ -49,5 +49,5 @@ reent_init.o: /home/fast/esp/esp-idf/components/newlib/reent_init.c \
 
 /home/fast/esp/esp-idf/components/esp32/include/esp_attr.h:
 
-/home/fast/esp/hello_world/build/include/sdkconfig.h:
+/home/fast/esp/hello_world_git/build/include/sdkconfig.h:
 /home/fast/esp/esp-idf/components/newlib/./reent_init.c:

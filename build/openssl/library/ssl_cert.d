@@ -11,7 +11,7 @@ library/ssl_cert.o: \
  /home/fast/esp/esp-idf/components/openssl/include/internal/ssl_stack.h \
  /home/fast/esp/esp-idf/components/openssl/include/internal/ssl_dbg.h \
  /home/fast/esp/esp-idf/components/openssl/include/platform/ssl_opt.h \
- /home/fast/esp/hello_world/build/include/sdkconfig.h \
+ /home/fast/esp/hello_world_git/build/include/sdkconfig.h \
  /home/fast/esp/esp-idf/components/openssl/include/platform/ssl_port.h \
  /home/fast/esp/esp-idf/components/esp32/include/esp_types.h \
  /home/fast/esp/esp-idf/components/newlib/include/sys/cdefs.h \
@@ -67,7 +67,7 @@ library/ssl_cert.o: \
 
 /home/fast/esp/esp-idf/components/openssl/include/platform/ssl_opt.h:
 
-/home/fast/esp/hello_world/build/include/sdkconfig.h:
+/home/fast/esp/hello_world_git/build/include/sdkconfig.h:
 
 /home/fast/esp/esp-idf/components/openssl/include/platform/ssl_port.h:
 

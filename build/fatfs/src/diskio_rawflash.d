@@ -27,7 +27,7 @@ src/diskio_rawflash.o: \
  /home/fast/esp/esp-idf/components/newlib/include/stdint.h \
  /home/fast/esp/esp-idf/components/newlib/include/sys/_intsup.h \
  /home/fast/esp/esp-idf/components/newlib/platform_include/assert.h \
- /home/fast/esp/hello_world/build/include/sdkconfig.h \
+ /home/fast/esp/hello_world_git/build/include/sdkconfig.h \
  /home/fast/esp/esp-idf/components/newlib/include/stdlib.h \
  /home/fast/esp/esp-idf/components/newlib/include/machine/stdlib.h \
  /home/fast/esp/esp-idf/components/newlib/include/alloca.h \
@@ -152,7 +152,7 @@ src/diskio_rawflash.o: \
 
 /home/fast/esp/esp-idf/components/newlib/platform_include/assert.h:
 
-/home/fast/esp/hello_world/build/include/sdkconfig.h:
+/home/fast/esp/hello_world_git/build/include/sdkconfig.h:
 
 /home/fast/esp/esp-idf/components/newlib/include/stdlib.h:
 

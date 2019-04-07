@@ -17,7 +17,7 @@ crosscore_int.o: /home/fast/esp/esp-idf/components/esp32/crosscore_int.c \
  /home/fast/esp/esp-idf/components/newlib/include/sys/cdefs.h \
  /home/fast/esp/esp-idf/components/newlib/include/sys/string.h \
  /home/fast/esp/esp-idf/components/esp32/include/esp_attr.h \
- /home/fast/esp/hello_world/build/include/sdkconfig.h \
+ /home/fast/esp/hello_world_git/build/include/sdkconfig.h \
  /home/fast/esp/esp-idf/components/esp32/include/esp_err.h \
  /home/fast/esp/esp-idf/components/newlib/include/stdio.h \
  /home/fast/esp/esp-idf/components/newlib/include/sys/types.h \
@@ -130,7 +130,7 @@ crosscore_int.o: /home/fast/esp/esp-idf/components/esp32/crosscore_int.c \
 
 /home/fast/esp/esp-idf/components/esp32/include/esp_attr.h:
 
-/home/fast/esp/hello_world/build/include/sdkconfig.h:
+/home/fast/esp/hello_world_git/build/include/sdkconfig.h:
 
 /home/fast/esp/esp-idf/components/esp32/include/esp_err.h:
 

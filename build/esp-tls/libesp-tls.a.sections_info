@@ -1,4 +1,4 @@
-In archive /home/fast/esp/hello_world/build/esp-tls/libesp-tls.a:
+In archive /home/fast/esp/hello_world_git/build/esp-tls/libesp-tls.a:
 
 esp_tls.o:     file format elf32-xtensa-le
 
@@ -116,13 +116,13 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, RELOC, READONLY, DEBUGGING
  55 .debug_line   00000e07  00000000  00000000  00005dbc  2**0
                   CONTENTS, RELOC, READONLY, DEBUGGING
- 56 .debug_str    0000194a  00000000  00000000  00006bc3  2**0
+ 56 .debug_str    0000194e  00000000  00000000  00006bc3  2**0
                   CONTENTS, READONLY, DEBUGGING
- 57 .comment      0000003b  00000000  00000000  0000850d  2**0
+ 57 .comment      0000003b  00000000  00000000  00008511  2**0
                   CONTENTS, READONLY
- 58 .xtensa.info  00000038  00000000  00000000  00008548  2**0
+ 58 .xtensa.info  00000038  00000000  00000000  0000854c  2**0
                   CONTENTS, READONLY
- 59 .xt.lit       000000b0  00000000  00000000  00008580  2**0
+ 59 .xt.lit       000000b0  00000000  00000000  00008584  2**0
                   CONTENTS, RELOC, READONLY
- 60 .xt.prop      0000099c  00000000  00000000  00008630  2**0
+ 60 .xt.prop      0000099c  00000000  00000000  00008634  2**0
                   CONTENTS, RELOC, READONLY

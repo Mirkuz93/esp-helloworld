@@ -18,7 +18,7 @@ src/bootloader_random.o: \
  /home/fast/esp/esp-idf/components/soc/esp32/include/soc/dport_reg.h \
  /home/fast/esp/esp-idf/components/soc/esp32/include/soc/dport_access.h \
  /home/fast/esp/esp-idf/components/esp32/include/esp_attr.h \
- /home/fast/esp/hello_world/build/bootloader/../include/sdkconfig.h \
+ /home/fast/esp/hello_world_git/build/bootloader/../include/sdkconfig.h \
  /home/fast/esp/esp-idf/components/esp32/include/esp_dport_access.h \
  /home/fast/esp/esp-idf/components/soc/esp32/include/soc/uart_reg.h \
  /home/fast/esp/esp-idf/components/esp32/include/xtensa/xtruntime.h \
@@ -67,7 +67,7 @@ src/bootloader_random.o: \
 
 /home/fast/esp/esp-idf/components/esp32/include/esp_attr.h:
 
-/home/fast/esp/hello_world/build/bootloader/../include/sdkconfig.h:
+/home/fast/esp/hello_world_git/build/bootloader/../include/sdkconfig.h:
 
 /home/fast/esp/esp-idf/components/esp32/include/esp_dport_access.h:
 

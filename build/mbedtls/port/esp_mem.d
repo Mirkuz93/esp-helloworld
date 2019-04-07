@@ -1,6 +1,6 @@
 port/esp_mem.o: /home/fast/esp/esp-idf/components/mbedtls/port/esp_mem.c \
  /home/fast/esp/esp-idf/components/esp32/include/esp_attr.h \
- /home/fast/esp/hello_world/build/include/sdkconfig.h \
+ /home/fast/esp/hello_world_git/build/include/sdkconfig.h \
  /home/fast/esp/esp-idf/components/heap/include/esp_heap_caps.h \
  /home/fast/esp/esp-idf/components/newlib/include/stdint.h \
  /home/fast/esp/esp-idf/components/newlib/include/machine/_default_types.h \
@@ -25,7 +25,7 @@ port/esp_mem.o: /home/fast/esp/esp-idf/components/mbedtls/port/esp_mem.c \
 
 /home/fast/esp/esp-idf/components/esp32/include/esp_attr.h:
 
-/home/fast/esp/hello_world/build/include/sdkconfig.h:
+/home/fast/esp/hello_world_git/build/include/sdkconfig.h:
 
 /home/fast/esp/esp-idf/components/heap/include/esp_heap_caps.h:
 

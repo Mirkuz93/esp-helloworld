@@ -19,7 +19,7 @@ esp-mqtt/lib/mqtt_msg.o: \
  /home/fast/esp/esp-idf/components/newlib/include/sys/string.h \
  /home/fast/esp/esp-idf/components/mqtt/esp-mqtt/lib/include/mqtt_msg.h \
  /home/fast/esp/esp-idf/components/mqtt/esp-mqtt/include/mqtt_config.h \
- /home/fast/esp/hello_world/build/include/sdkconfig.h \
+ /home/fast/esp/hello_world_git/build/include/sdkconfig.h \
  /home/fast/esp/esp-idf/components/mqtt/esp-mqtt/lib/include/platform.h \
  /home/fast/esp/esp-idf/components/mqtt/esp-mqtt/lib/include/platform_esp32_idf.h \
  /home/fast/esp/esp-idf/components/freertos/include/freertos/FreeRTOS.h \
@@ -171,7 +171,7 @@ esp-mqtt/lib/mqtt_msg.o: \
 
 /home/fast/esp/esp-idf/components/mqtt/esp-mqtt/include/mqtt_config.h:
 
-/home/fast/esp/hello_world/build/include/sdkconfig.h:
+/home/fast/esp/hello_world_git/build/include/sdkconfig.h:
 
 /home/fast/esp/esp-idf/components/mqtt/esp-mqtt/lib/include/platform.h:
 

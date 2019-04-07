@@ -16,7 +16,7 @@ cxx_guards.o: /home/fast/esp/esp-idf/components/cxx/cxx_guards.cpp \
  /home/fast/esp/esp-idf/components/newlib/include/machine/stdlib.h \
  /home/fast/esp/esp-idf/components/newlib/include/alloca.h \
  /home/fast/esp/esp-idf/components/newlib/platform_include/assert.h \
- /home/fast/esp/hello_world/build/include/sdkconfig.h \
+ /home/fast/esp/hello_world_git/build/include/sdkconfig.h \
  /home/fast/esp/esp-idf/components/newlib/include/assert.h \
  /home/fast/esp/esp-idf/components/newlib/include/stdint.h \
  /home/fast/esp/esp-idf/components/newlib/include/sys/_intsup.h \
@@ -112,7 +112,7 @@ cxx_guards.o: /home/fast/esp/esp-idf/components/cxx/cxx_guards.cpp \
 
 /home/fast/esp/esp-idf/components/newlib/platform_include/assert.h:
 
-/home/fast/esp/hello_world/build/include/sdkconfig.h:
+/home/fast/esp/hello_world_git/build/include/sdkconfig.h:
 
 /home/fast/esp/esp-idf/components/newlib/include/assert.h:
 

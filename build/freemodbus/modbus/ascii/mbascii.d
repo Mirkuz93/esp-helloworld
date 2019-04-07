@@ -26,7 +26,7 @@ modbus/ascii/mbascii.o: \
  /home/fast/esp/esp-idf/components/newlib/include/sys/_intsup.h \
  /home/fast/esp/esp-idf/components/esp32/include/esp_assert.h \
  /home/fast/esp/esp-idf/components/newlib/platform_include/assert.h \
- /home/fast/esp/hello_world/build/include/sdkconfig.h \
+ /home/fast/esp/hello_world_git/build/include/sdkconfig.h \
  /home/fast/esp/esp-idf/components/newlib/include/assert.h \
  /home/fast/esp/esp-idf/components/soc/esp32/include/soc/uart_struct.h \
  /home/fast/esp/esp-idf/components/esp32/include/esp_err.h \
@@ -163,7 +163,7 @@ modbus/ascii/mbascii.o: \
 
 /home/fast/esp/esp-idf/components/newlib/platform_include/assert.h:
 
-/home/fast/esp/hello_world/build/include/sdkconfig.h:
+/home/fast/esp/hello_world_git/build/include/sdkconfig.h:
 
 /home/fast/esp/esp-idf/components/newlib/include/assert.h:
 

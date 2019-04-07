@@ -1,4 +1,4 @@
-In archive /home/fast/esp/hello_world/build/smartconfig_ack/libsmartconfig_ack.a:
+In archive /home/fast/esp/hello_world_git/build/smartconfig_ack/libsmartconfig_ack.a:
 
 smartconfig_ack.o:     file format elf32-xtensa-le
 
@@ -44,13 +44,13 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, RELOC, READONLY, DEBUGGING
  19 .debug_line   000005c1  00000000  00000000  0000171b  2**0
                   CONTENTS, RELOC, READONLY, DEBUGGING
- 20 .debug_str    000006f3  00000000  00000000  00001cdc  2**0
+ 20 .debug_str    000006f7  00000000  00000000  00001cdc  2**0
                   CONTENTS, READONLY, DEBUGGING
- 21 .comment      0000003b  00000000  00000000  000023cf  2**0
+ 21 .comment      0000003b  00000000  00000000  000023d3  2**0
                   CONTENTS, READONLY
- 22 .xtensa.info  00000038  00000000  00000000  0000240a  2**0
+ 22 .xtensa.info  00000038  00000000  00000000  0000240e  2**0
                   CONTENTS, READONLY
- 23 .xt.lit       00000020  00000000  00000000  00002442  2**0
+ 23 .xt.lit       00000020  00000000  00000000  00002446  2**0
                   CONTENTS, RELOC, READONLY
- 24 .xt.prop      000001ec  00000000  00000000  00002462  2**0
+ 24 .xt.prop      000001ec  00000000  00000000  00002466  2**0
                   CONTENTS, RELOC, READONLY

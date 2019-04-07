@@ -1,4 +1,4 @@
-In archive /home/fast/esp/hello_world/build/libsodium/liblibsodium.a:
+In archive /home/fast/esp/hello_world_git/build/libsodium/liblibsodium.a:
 
 randombytes_esp32.o:     file format elf32-xtensa-le
 
@@ -30,15 +30,15 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, RELOC, READONLY, DEBUGGING
  12 .debug_line   000001bc  00000000  00000000  00000318  2**0
                   CONTENTS, RELOC, READONLY, DEBUGGING
- 13 .debug_str    00000222  00000000  00000000  000004d4  2**0
+ 13 .debug_str    00000226  00000000  00000000  000004d4  2**0
                   CONTENTS, READONLY, DEBUGGING
- 14 .comment      0000003b  00000000  00000000  000006f6  2**0
+ 14 .comment      0000003b  00000000  00000000  000006fa  2**0
                   CONTENTS, READONLY
- 15 .xtensa.info  00000038  00000000  00000000  00000731  2**0
+ 15 .xtensa.info  00000038  00000000  00000000  00000735  2**0
                   CONTENTS, READONLY
- 16 .xt.lit       00000008  00000000  00000000  00000769  2**0
+ 16 .xt.lit       00000008  00000000  00000000  0000076d  2**0
                   CONTENTS, RELOC, READONLY
- 17 .xt.prop      0000003c  00000000  00000000  00000771  2**0
+ 17 .xt.prop      0000003c  00000000  00000000  00000775  2**0
                   CONTENTS, RELOC, READONLY
 
 aead_chacha20poly1305.o:     file format elf32-xtensa-le
@@ -3071,15 +3071,15 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, RELOC, READONLY, DEBUGGING
  17 .debug_line   00000400  00000000  00000000  00000f1c  2**0
                   CONTENTS, RELOC, READONLY, DEBUGGING
- 18 .debug_str    00000368  00000000  00000000  0000131c  2**0
+ 18 .debug_str    0000036c  00000000  00000000  0000131c  2**0
                   CONTENTS, READONLY, DEBUGGING
- 19 .comment      0000003b  00000000  00000000  00001684  2**0
+ 19 .comment      0000003b  00000000  00000000  00001688  2**0
                   CONTENTS, READONLY
- 20 .xtensa.info  00000038  00000000  00000000  000016bf  2**0
+ 20 .xtensa.info  00000038  00000000  00000000  000016c3  2**0
                   CONTENTS, READONLY
- 21 .xt.lit       00000020  00000000  00000000  000016f7  2**0
+ 21 .xt.lit       00000020  00000000  00000000  000016fb  2**0
                   CONTENTS, RELOC, READONLY
- 22 .xt.prop      000002e8  00000000  00000000  00001717  2**0
+ 22 .xt.prop      000002e8  00000000  00000000  0000171b  2**0
                   CONTENTS, RELOC, READONLY
 
 crypto_secretbox.o:     file format elf32-xtensa-le

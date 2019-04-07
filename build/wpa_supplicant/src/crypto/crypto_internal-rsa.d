@@ -30,7 +30,7 @@ src/crypto/crypto_internal-rsa.o: \
  /home/fast/esp/esp-idf/components/newlib/include/alloca.h \
  /home/fast/esp/esp-idf/components/esp32/include/esp_err.h \
  /home/fast/esp/esp-idf/components/newlib/platform_include/assert.h \
- /home/fast/esp/hello_world/build/include/sdkconfig.h \
+ /home/fast/esp/hello_world_git/build/include/sdkconfig.h \
  /home/fast/esp/esp-idf/components/newlib/include/assert.h \
  /home/fast/esp/esp-idf/components/esp32/include/rom/ets_sys.h \
  /home/fast/esp/esp-idf/components/soc/esp32/include/soc/soc.h \
@@ -108,7 +108,7 @@ src/crypto/crypto_internal-rsa.o: \
 
 /home/fast/esp/esp-idf/components/newlib/platform_include/assert.h:
 
-/home/fast/esp/hello_world/build/include/sdkconfig.h:
+/home/fast/esp/hello_world_git/build/include/sdkconfig.h:
 
 /home/fast/esp/esp-idf/components/newlib/include/assert.h:
 

@@ -38,7 +38,7 @@ nghttp2/lib/nghttp2_outbound_item.o: \
  /home/fast/esp/esp-idf/components/nghttp/nghttp2/lib/nghttp2_mem.h \
  /home/fast/esp/esp-idf/components/nghttp/nghttp2/lib/nghttp2_rcbuf.h \
  /home/fast/esp/esp-idf/components/newlib/platform_include/assert.h \
- /home/fast/esp/hello_world/build/include/sdkconfig.h \
+ /home/fast/esp/hello_world_git/build/include/sdkconfig.h \
  /home/fast/esp/esp-idf/components/newlib/include/assert.h
 
 /home/fast/esp/esp-idf/components/nghttp/nghttp2/lib/nghttp2_outbound_item.h:
@@ -117,7 +117,7 @@ nghttp2/lib/nghttp2_outbound_item.o: \
 
 /home/fast/esp/esp-idf/components/newlib/platform_include/assert.h:
 
-/home/fast/esp/hello_world/build/include/sdkconfig.h:
+/home/fast/esp/hello_world_git/build/include/sdkconfig.h:
 
 /home/fast/esp/esp-idf/components/newlib/include/assert.h:
 /home/fast/esp/esp-idf/components/nghttp/nghttp2/lib/nghttp2_outbound_item.c:

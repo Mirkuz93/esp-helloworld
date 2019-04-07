@@ -20,7 +20,7 @@ protobuf-c/protobuf-c/protobuf-c.o: \
  /home/fast/esp/esp-idf/components/newlib/include/sys/string.h \
  /home/fast/esp/esp-idf/components/protobuf-c/protobuf-c/protobuf-c/protobuf-c.h \
  /home/fast/esp/esp-idf/components/newlib/platform_include/assert.h \
- /home/fast/esp/hello_world/build/include/sdkconfig.h \
+ /home/fast/esp/hello_world_git/build/include/sdkconfig.h \
  /home/fast/esp/esp-idf/components/newlib/include/assert.h \
  /home/fast/esp/esp-idf/components/newlib/include/limits.h \
  /home/fast/esp/esp-idf/components/newlib/include/stdint.h \
@@ -66,7 +66,7 @@ protobuf-c/protobuf-c/protobuf-c.o: \
 
 /home/fast/esp/esp-idf/components/newlib/platform_include/assert.h:
 
-/home/fast/esp/hello_world/build/include/sdkconfig.h:
+/home/fast/esp/hello_world_git/build/include/sdkconfig.h:
 
 /home/fast/esp/esp-idf/components/newlib/include/assert.h:
 

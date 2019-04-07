@@ -15,7 +15,7 @@ heap_caps.o: /home/fast/esp/esp-idf/components/heap/heap_caps.c \
  /home/fast/esp/esp-idf/components/newlib/include/sys/cdefs.h \
  /home/fast/esp/esp-idf/components/newlib/include/sys/string.h \
  /home/fast/esp/esp-idf/components/newlib/platform_include/assert.h \
- /home/fast/esp/hello_world/build/include/sdkconfig.h \
+ /home/fast/esp/hello_world_git/build/include/sdkconfig.h \
  /home/fast/esp/esp-idf/components/newlib/include/stdlib.h \
  /home/fast/esp/esp-idf/components/newlib/include/machine/stdlib.h \
  /home/fast/esp/esp-idf/components/newlib/include/alloca.h \
@@ -118,7 +118,7 @@ heap_caps.o: /home/fast/esp/esp-idf/components/heap/heap_caps.c \
 
 /home/fast/esp/esp-idf/components/newlib/platform_include/assert.h:
 
-/home/fast/esp/hello_world/build/include/sdkconfig.h:
+/home/fast/esp/hello_world_git/build/include/sdkconfig.h:
 
 /home/fast/esp/esp-idf/components/newlib/include/stdlib.h:
 

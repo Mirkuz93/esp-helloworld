@@ -1,4 +1,4 @@
-In archive /home/fast/esp/hello_world/build/esp_ringbuf/libesp_ringbuf.a:
+In archive /home/fast/esp/hello_world_git/build/esp_ringbuf/libesp_ringbuf.a:
 
 ringbuf.o:     file format elf32-xtensa-le
 
@@ -242,13 +242,13 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, RELOC, READONLY, DEBUGGING
 118 .debug_line   0000158a  00000000  00000000  00006f81  2**0
                   CONTENTS, RELOC, READONLY, DEBUGGING
-119 .debug_str    00000aed  00000000  00000000  0000850b  2**0
+119 .debug_str    00000af1  00000000  00000000  0000850b  2**0
                   CONTENTS, READONLY, DEBUGGING
-120 .comment      0000003b  00000000  00000000  00008ff8  2**0
+120 .comment      0000003b  00000000  00000000  00008ffc  2**0
                   CONTENTS, READONLY
-121 .xtensa.info  00000038  00000000  00000000  00009033  2**0
+121 .xtensa.info  00000038  00000000  00000000  00009037  2**0
                   CONTENTS, READONLY
-122 .xt.lit       00000118  00000000  00000000  0000906b  2**0
+122 .xt.lit       00000118  00000000  00000000  0000906f  2**0
                   CONTENTS, RELOC, READONLY
-123 .xt.prop      00001464  00000000  00000000  00009183  2**0
+123 .xt.prop      00001464  00000000  00000000  00009187  2**0
                   CONTENTS, RELOC, READONLY

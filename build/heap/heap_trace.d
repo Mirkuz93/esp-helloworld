@@ -18,7 +18,7 @@ heap_trace.o: /home/fast/esp/esp-idf/components/heap/heap_trace.c \
  /home/fast/esp/esp-idf/components/newlib/include/sys/syslimits.h \
  /home/fast/esp/esp-idf/components/newlib/include/machine/endian.h \
  /home/fast/esp/esp-idf/components/newlib/include/machine/param.h \
- /home/fast/esp/hello_world/build/include/sdkconfig.h \
+ /home/fast/esp/hello_world_git/build/include/sdkconfig.h \
  /home/fast/esp/esp-idf/components/heap/include/esp_heap_trace.h \
  /home/fast/esp/esp-idf/components/newlib/include/stdint.h \
  /home/fast/esp/esp-idf/components/newlib/include/sys/_intsup.h \
@@ -126,7 +126,7 @@ heap_trace.o: /home/fast/esp/esp-idf/components/heap/heap_trace.c \
 
 /home/fast/esp/esp-idf/components/newlib/include/machine/param.h:
 
-/home/fast/esp/hello_world/build/include/sdkconfig.h:
+/home/fast/esp/hello_world_git/build/include/sdkconfig.h:
 
 /home/fast/esp/esp-idf/components/heap/include/esp_heap_trace.h:
 

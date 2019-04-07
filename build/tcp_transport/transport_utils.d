@@ -25,7 +25,7 @@ transport_utils.o: \
  /home/fast/esp/esp-idf/components/newlib/include/sys/sched.h \
  /home/fast/esp/esp-idf/components/newlib/include/sys/stdio.h \
  /home/fast/esp/esp-idf/components/newlib/platform_include/assert.h \
- /home/fast/esp/hello_world/build/include/sdkconfig.h \
+ /home/fast/esp/hello_world_git/build/include/sdkconfig.h \
  /home/fast/esp/esp-idf/components/newlib/include/assert.h \
  /home/fast/esp/esp-idf/components/tcp_transport/include/esp_transport_utils.h \
  /home/fast/esp/esp-idf/components/newlib/include/sys/time.h
@@ -80,7 +80,7 @@ transport_utils.o: \
 
 /home/fast/esp/esp-idf/components/newlib/platform_include/assert.h:
 
-/home/fast/esp/hello_world/build/include/sdkconfig.h:
+/home/fast/esp/hello_world_git/build/include/sdkconfig.h:
 
 /home/fast/esp/esp-idf/components/newlib/include/assert.h:
 

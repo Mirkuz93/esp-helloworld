@@ -30,7 +30,7 @@ spiffs/src/spiffs_gc.o: \
  /home/fast/esp/esp-idf/components/newlib/include/unistd.h \
  /home/fast/esp/esp-idf/components/newlib/platform_include/sys/unistd.h \
  /home/fast/esp/esp-idf/components/newlib/include/sys/unistd.h \
- /home/fast/esp/hello_world/build/include/sdkconfig.h \
+ /home/fast/esp/hello_world_git/build/include/sdkconfig.h \
  /home/fast/esp/esp-idf/components/log/include/esp_log.h \
  /home/fast/esp/esp-idf/components/esp32/include/rom/ets_sys.h \
  /home/fast/esp/esp-idf/components/soc/esp32/include/soc/soc.h \
@@ -100,7 +100,7 @@ spiffs/src/spiffs_gc.o: \
 
 /home/fast/esp/esp-idf/components/newlib/include/sys/unistd.h:
 
-/home/fast/esp/hello_world/build/include/sdkconfig.h:
+/home/fast/esp/hello_world_git/build/include/sdkconfig.h:
 
 /home/fast/esp/esp-idf/components/log/include/esp_log.h:
 

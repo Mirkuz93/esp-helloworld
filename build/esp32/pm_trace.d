@@ -1,6 +1,6 @@
 pm_trace.o: /home/fast/esp/esp-idf/components/esp32/pm_trace.c \
  /home/fast/esp/esp-idf/components/esp32/pm_trace.h \
- /home/fast/esp/hello_world/build/include/sdkconfig.h \
+ /home/fast/esp/hello_world_git/build/include/sdkconfig.h \
  /home/fast/esp/esp-idf/components/driver/include/driver/gpio.h \
  /home/fast/esp/esp-idf/components/esp32/include/esp_err.h \
  /home/fast/esp/esp-idf/components/newlib/include/stdint.h \
@@ -44,7 +44,7 @@ pm_trace.o: /home/fast/esp/esp-idf/components/esp32/pm_trace.c \
 
 /home/fast/esp/esp-idf/components/esp32/pm_trace.h:
 
-/home/fast/esp/hello_world/build/include/sdkconfig.h:
+/home/fast/esp/hello_world_git/build/include/sdkconfig.h:
 
 /home/fast/esp/esp-idf/components/driver/include/driver/gpio.h:
 

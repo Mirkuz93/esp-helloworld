@@ -23,7 +23,7 @@ src/bootloader_utility.o: \
  /home/fast/esp/esp-idf/components/newlib/include/machine/endian.h \
  /home/fast/esp/esp-idf/components/newlib/include/machine/param.h \
  /home/fast/esp/esp-idf/components/esp32/include/esp_attr.h \
- /home/fast/esp/hello_world/build/include/sdkconfig.h \
+ /home/fast/esp/hello_world_git/build/include/sdkconfig.h \
  /home/fast/esp/esp-idf/components/log/include/esp_log.h \
  /home/fast/esp/esp-idf/components/esp32/include/rom/ets_sys.h \
  /home/fast/esp/esp-idf/components/soc/esp32/include/soc/soc.h \
@@ -138,7 +138,7 @@ src/bootloader_utility.o: \
 
 /home/fast/esp/esp-idf/components/esp32/include/esp_attr.h:
 
-/home/fast/esp/hello_world/build/include/sdkconfig.h:
+/home/fast/esp/hello_world_git/build/include/sdkconfig.h:
 
 /home/fast/esp/esp-idf/components/log/include/esp_log.h:
 

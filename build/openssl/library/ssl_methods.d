@@ -28,7 +28,7 @@ library/ssl_methods.o: \
  /home/fast/esp/esp-idf/components/newlib/include/stdint.h \
  /home/fast/esp/esp-idf/components/newlib/include/sys/_intsup.h \
  /home/fast/esp/esp-idf/components/log/include/esp_log.h \
- /home/fast/esp/hello_world/build/include/sdkconfig.h \
+ /home/fast/esp/hello_world_git/build/include/sdkconfig.h \
  /home/fast/esp/esp-idf/components/esp32/include/rom/ets_sys.h \
  /home/fast/esp/esp-idf/components/soc/esp32/include/soc/soc.h \
  /home/fast/esp/esp-idf/components/esp32/include/esp_assert.h \
@@ -97,7 +97,7 @@ library/ssl_methods.o: \
 
 /home/fast/esp/esp-idf/components/log/include/esp_log.h:
 
-/home/fast/esp/hello_world/build/include/sdkconfig.h:
+/home/fast/esp/hello_world_git/build/include/sdkconfig.h:
 
 /home/fast/esp/esp-idf/components/esp32/include/rom/ets_sys.h:
 

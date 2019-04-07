@@ -23,7 +23,7 @@ phy_init.o: /home/fast/esp/esp-idf/components/esp32/phy_init.c \
  /home/fast/esp/esp-idf/components/soc/esp32/include/soc/soc.h \
  /home/fast/esp/esp-idf/components/esp32/include/esp_assert.h \
  /home/fast/esp/esp-idf/components/newlib/platform_include/assert.h \
- /home/fast/esp/hello_world/build/include/sdkconfig.h \
+ /home/fast/esp/hello_world_git/build/include/sdkconfig.h \
  /home/fast/esp/esp-idf/components/newlib/include/assert.h \
  /home/fast/esp/esp-idf/components/esp32/include/rom/rtc.h \
  /home/fast/esp/esp-idf/components/esp32/include/rom/ets_sys.h \
@@ -199,7 +199,7 @@ phy_init.o: /home/fast/esp/esp-idf/components/esp32/phy_init.c \
 
 /home/fast/esp/esp-idf/components/newlib/platform_include/assert.h:
 
-/home/fast/esp/hello_world/build/include/sdkconfig.h:
+/home/fast/esp/hello_world_git/build/include/sdkconfig.h:
 
 /home/fast/esp/esp-idf/components/newlib/include/assert.h:
 

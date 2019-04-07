@@ -1,5 +1,5 @@
 int_wdt.o: /home/fast/esp/esp-idf/components/esp32/int_wdt.c \
- /home/fast/esp/hello_world/build/include/sdkconfig.h \
+ /home/fast/esp/hello_world_git/build/include/sdkconfig.h \
  /home/fast/esp/esp-idf/components/newlib/include/stdint.h \
  /home/fast/esp/esp-idf/components/newlib/include/machine/_default_types.h \
  /home/fast/esp/esp-idf/components/newlib/include/sys/features.h \
@@ -90,7 +90,7 @@ int_wdt.o: /home/fast/esp/esp-idf/components/esp32/int_wdt.c \
  /home/fast/esp/esp-idf/components/soc/esp32/include/soc/periph_defs.h \
  /home/fast/esp/esp-idf/components/esp32/include/esp_int_wdt.h
 
-/home/fast/esp/hello_world/build/include/sdkconfig.h:
+/home/fast/esp/hello_world_git/build/include/sdkconfig.h:
 
 /home/fast/esp/esp-idf/components/newlib/include/stdint.h:
 

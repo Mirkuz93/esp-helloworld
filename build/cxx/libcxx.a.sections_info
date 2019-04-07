@@ -1,4 +1,4 @@
-In archive /home/fast/esp/hello_world/build/cxx/libcxx.a:
+In archive /home/fast/esp/hello_world_git/build/cxx/libcxx.a:
 
 cxx_guards.o:     file format elf32-xtensa-le
 
@@ -70,15 +70,15 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, RELOC, READONLY, DEBUGGING
  32 .debug_line   00000873  00000000  00000000  00003fe6  2**0
                   CONTENTS, RELOC, READONLY, DEBUGGING
- 33 .debug_str    0000277d  00000000  00000000  00004859  2**0
+ 33 .debug_str    00002781  00000000  00000000  00004859  2**0
                   CONTENTS, READONLY, DEBUGGING
- 34 .comment      0000003b  00000000  00000000  00006fd6  2**0
+ 34 .comment      0000003b  00000000  00000000  00006fda  2**0
                   CONTENTS, READONLY
- 35 .xtensa.info  00000038  00000000  00000000  00007011  2**0
+ 35 .xtensa.info  00000038  00000000  00000000  00007015  2**0
                   CONTENTS, READONLY
- 36 .xt.lit       00000030  00000000  00000000  00007049  2**0
+ 36 .xt.lit       00000030  00000000  00000000  0000704d  2**0
                   CONTENTS, RELOC, READONLY
- 37 .xt.prop      00000288  00000000  00000000  00007079  2**0
+ 37 .xt.prop      00000288  00000000  00000000  0000707d  2**0
                   CONTENTS, RELOC, READONLY
 
 cxx_exception_stubs.o:     file format elf32-xtensa-le
@@ -127,13 +127,13 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, RELOC, READONLY, DEBUGGING
  20 .debug_line   000002f2  00000000  00000000  00001716  2**0
                   CONTENTS, RELOC, READONLY, DEBUGGING
- 21 .debug_str    00000ad6  00000000  00000000  00001a08  2**0
+ 21 .debug_str    00000ada  00000000  00000000  00001a08  2**0
                   CONTENTS, READONLY, DEBUGGING
- 22 .comment      0000003b  00000000  00000000  000024de  2**0
+ 22 .comment      0000003b  00000000  00000000  000024e2  2**0
                   CONTENTS, READONLY
- 23 .xtensa.info  00000038  00000000  00000000  00002519  2**0
+ 23 .xtensa.info  00000038  00000000  00000000  0000251d  2**0
                   CONTENTS, READONLY
- 24 .xt.lit       00000028  00000000  00000000  00002551  2**0
+ 24 .xt.lit       00000028  00000000  00000000  00002555  2**0
                   CONTENTS, RELOC, READONLY
- 25 .xt.prop      000000c0  00000000  00000000  00002579  2**0
+ 25 .xt.prop      000000c0  00000000  00000000  0000257d  2**0
                   CONTENTS, RELOC, READONLY

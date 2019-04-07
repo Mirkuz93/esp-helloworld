@@ -39,7 +39,7 @@ esp_tls.o: /home/fast/esp/esp-idf/components/esp-tls/esp_tls.c \
  /home/fast/esp/esp-idf/components/vfs/include/sys/ioctl.h \
  /home/fast/esp/esp-idf/components/newlib/platform_include/sys/select.h \
  /home/fast/esp/esp-idf/components/esp32/include/esp_task.h \
- /home/fast/esp/hello_world/build/include/sdkconfig.h \
+ /home/fast/esp/hello_world_git/build/include/sdkconfig.h \
  /home/fast/esp/esp-idf/components/freertos/include/freertos/FreeRTOSConfig.h \
  /home/fast/esp/esp-idf/components/freertos/include/freertos/xtensa_config.h \
  /home/fast/esp/esp-idf/components/esp32/include/xtensa/hal.h \
@@ -239,7 +239,7 @@ esp_tls.o: /home/fast/esp/esp-idf/components/esp-tls/esp_tls.c \
 
 /home/fast/esp/esp-idf/components/esp32/include/esp_task.h:
 
-/home/fast/esp/hello_world/build/include/sdkconfig.h:
+/home/fast/esp/hello_world_git/build/include/sdkconfig.h:
 
 /home/fast/esp/esp-idf/components/freertos/include/freertos/FreeRTOSConfig.h:
 

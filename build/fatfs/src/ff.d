@@ -10,7 +10,7 @@ src/ff.o: /home/fast/esp/esp-idf/components/fatfs/src/ff.c \
  /home/fast/esp/esp-idf/components/newlib/include/sys/syslimits.h \
  /home/fast/esp/esp-idf/components/newlib/include/machine/endian.h \
  /home/fast/esp/esp-idf/components/newlib/include/machine/param.h \
- /home/fast/esp/hello_world/build/include/sdkconfig.h \
+ /home/fast/esp/hello_world_git/build/include/sdkconfig.h \
  /home/fast/esp/esp-idf/components/freertos/include/freertos/FreeRTOS.h \
  /home/fast/esp/esp-idf/components/newlib/include/sys/reent.h \
  /home/fast/esp/esp-idf/components/newlib/include/_ansi.h \
@@ -112,7 +112,7 @@ src/ff.o: /home/fast/esp/esp-idf/components/fatfs/src/ff.c \
 
 /home/fast/esp/esp-idf/components/newlib/include/machine/param.h:
 
-/home/fast/esp/hello_world/build/include/sdkconfig.h:
+/home/fast/esp/hello_world_git/build/include/sdkconfig.h:
 
 /home/fast/esp/esp-idf/components/freertos/include/freertos/FreeRTOS.h:
 

@@ -9,7 +9,7 @@ src/crypto/md5-internal.o: \
  /home/fast/esp/esp-idf/components/soc/esp32/include/soc/soc.h \
  /home/fast/esp/esp-idf/components/esp32/include/esp_assert.h \
  /home/fast/esp/esp-idf/components/newlib/platform_include/assert.h \
- /home/fast/esp/hello_world/build/include/sdkconfig.h \
+ /home/fast/esp/hello_world_git/build/include/sdkconfig.h \
  /home/fast/esp/esp-idf/components/newlib/include/stdlib.h \
  /home/fast/esp/esp-idf/components/newlib/include/machine/ieeefp.h \
  /home/fast/esp/esp-idf/components/newlib/include/_ansi.h \
@@ -60,7 +60,7 @@ src/crypto/md5-internal.o: \
 
 /home/fast/esp/esp-idf/components/newlib/platform_include/assert.h:
 
-/home/fast/esp/hello_world/build/include/sdkconfig.h:
+/home/fast/esp/hello_world_git/build/include/sdkconfig.h:
 
 /home/fast/esp/esp-idf/components/newlib/include/stdlib.h:
 

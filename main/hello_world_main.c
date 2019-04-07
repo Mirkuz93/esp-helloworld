@@ -16,7 +16,11 @@
 
 // espmqtt library
 #include "mqtt_client.h"
-#include "mqtt_config.h"
+//#include "mqtt_config.h"
+
+#include "md5.h"
+#include "driver/gpio.h"
+#include "sdkconfig.h"
 
 #include <stdio.h>
 #include <stddef.h>
@@ -27,7 +31,12 @@
 #include "lwip/dns.h"
 #include "lwip/netdb.h"
 
-#define LED_GPIO_PIN                     5
+//#define LED_GPIO_PIN	5
+#define BLINK_GPIO	2
+#define BLINK_TIME	250
+#define BLINK_WAIT_TIME 500
+uint8_t BLINK_LED_ON = 0;
+uint8_t toBlink = 0;
 
 #define WIFI_CHANNEL_SWITCH_INTERVAL  (500)
 #define WIFI_CHANNEL_MAX               (13)
@@ -77,6 +86,9 @@ typedef struct {
   uint8_t payload[0]; // network data ended with 4 bytes csum (CRC32)
 } wifi_ieee80211_packet_t;
 
+static void blink_task(void *pvParameter);
+static TaskHandle_t xHandle_led = NULL;
+
 static esp_err_t event_handler(void *ctx, system_event_t *event);
 static void wifi_sniffer_init(void);
 static void wifi_sniffer_set_channel(uint8_t channel);
@@ -85,6 +97,28 @@ static void wifi_sniffer_packet_handler(void *buff, wifi_promiscuous_pkt_type_t 
 // Event group
 static EventGroupHandle_t wifi_event_group;
 const int CONNECTED_BIT = BIT0;
+
+static void blink_task(void *pvParameter)
+{
+    gpio_pad_select_gpio(BLINK_GPIO);
+
+    /* Set the GPIO as a push/pull output */
+    gpio_set_direction(BLINK_GPIO, GPIO_MODE_OUTPUT);
+
+    while(true){
+    	toBlink = BLINK_LED_ON;
+    	while(toBlink){
+		    gpio_set_level(BLINK_GPIO, 1);
+		    vTaskDelay(BLINK_TIME / portTICK_PERIOD_MS);
+		    BLINK_LED_ON = 0;
+		    gpio_set_level(BLINK_GPIO, 0);
+		    vTaskDelay(BLINK_TIME / portTICK_PERIOD_MS);
+		    toBlink = BLINK_LED_ON;
+		}
+	    gpio_set_level(BLINK_GPIO, 0);
+	    vTaskDelay(BLINK_WAIT_TIME / portTICK_PERIOD_MS);
+    }
+}
 
 esp_err_t event_handler(void *ctx, system_event_t *event)
 {
@@ -228,6 +262,9 @@ void wifi_sniffer_packet_handler(void* buff, wifi_promiscuous_pkt_type_t type)
   if(frame_ctr_str->type!=0 || frame_ctr_str->subtype!=4){
 	return;
   }
+  
+  BLINK_LED_ON = 1;
+  
   printf("\033[22;31mPROBE REQUEST!\033[0m\n");
   printf("TIME=%02d, CH=%02d, RSSI=%02d,"
     " A1=%02x:%02x:%02x:%02x:%02x:%02x,"
@@ -264,6 +301,8 @@ void wifi_sniffer_packet_handler(void* buff, wifi_promiscuous_pkt_type_t type)
 void app_main(){
 		
 	ESP_ERROR_CHECK(nvs_flash_init()); //initializing NVS (Non-Volatile Storage)
+	
+	xTaskCreate(&blink_task, "blink_task", configMINIMAL_STACK_SIZE, NULL, 5, &xHandle_led);
 	
 	wifi_sniffer_init();
 

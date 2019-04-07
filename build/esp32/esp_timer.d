@@ -22,7 +22,7 @@ esp_timer.o: /home/fast/esp/esp-idf/components/esp32/esp_timer.c \
  /home/fast/esp/esp-idf/components/newlib/include/stdint.h \
  /home/fast/esp/esp-idf/components/newlib/include/sys/_intsup.h \
  /home/fast/esp/esp-idf/components/esp32/include/esp_attr.h \
- /home/fast/esp/hello_world/build/include/sdkconfig.h \
+ /home/fast/esp/hello_world_git/build/include/sdkconfig.h \
  /home/fast/esp/esp-idf/components/esp32/include/esp_err.h \
  /home/fast/esp/esp-idf/components/newlib/include/stdio.h \
  /home/fast/esp/esp-idf/components/newlib/include/sys/types.h \
@@ -139,7 +139,7 @@ esp_timer.o: /home/fast/esp/esp-idf/components/esp32/esp_timer.c \
 
 /home/fast/esp/esp-idf/components/esp32/include/esp_attr.h:
 
-/home/fast/esp/hello_world/build/include/sdkconfig.h:
+/home/fast/esp/hello_world_git/build/include/sdkconfig.h:
 
 /home/fast/esp/esp-idf/components/esp32/include/esp_err.h:
 

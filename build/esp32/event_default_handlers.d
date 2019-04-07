@@ -27,7 +27,7 @@ event_default_handlers.o: \
  /home/fast/esp/esp-idf/components/newlib/include/sys/sched.h \
  /home/fast/esp/esp-idf/components/newlib/include/sys/stdio.h \
  /home/fast/esp/esp-idf/components/newlib/platform_include/assert.h \
- /home/fast/esp/hello_world/build/include/sdkconfig.h \
+ /home/fast/esp/hello_world_git/build/include/sdkconfig.h \
  /home/fast/esp/esp-idf/components/newlib/include/assert.h \
  /home/fast/esp/esp-idf/components/esp32/include/esp_wifi.h \
  /home/fast/esp/esp-idf/components/freertos/include/freertos/FreeRTOS.h \
@@ -189,7 +189,7 @@ event_default_handlers.o: \
 
 /home/fast/esp/esp-idf/components/newlib/platform_include/assert.h:
 
-/home/fast/esp/hello_world/build/include/sdkconfig.h:
+/home/fast/esp/hello_world_git/build/include/sdkconfig.h:
 
 /home/fast/esp/esp-idf/components/newlib/include/assert.h:
 

@@ -1,5 +1,5 @@
 termios.o: /home/fast/esp/esp-idf/components/newlib/termios.c \
- /home/fast/esp/hello_world/build/include/sdkconfig.h \
+ /home/fast/esp/hello_world_git/build/include/sdkconfig.h \
  /home/fast/esp/esp-idf/components/newlib/platform_include/sys/termios.h \
  /home/fast/esp/esp-idf/components/newlib/include/stdint.h \
  /home/fast/esp/esp-idf/components/newlib/include/machine/_default_types.h \
@@ -19,7 +19,7 @@ termios.o: /home/fast/esp/esp-idf/components/newlib/termios.c \
  /home/fast/esp/esp-idf/components/newlib/include/sys/errno.h \
  /home/fast/esp/esp-idf/components/newlib/include/sys/reent.h
 
-/home/fast/esp/hello_world/build/include/sdkconfig.h:
+/home/fast/esp/hello_world_git/build/include/sdkconfig.h:
 
 /home/fast/esp/esp-idf/components/newlib/platform_include/sys/termios.h:
 

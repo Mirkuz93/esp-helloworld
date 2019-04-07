@@ -30,7 +30,7 @@ unity_runner.o: /home/fast/esp/esp-idf/components/unity/unity_runner.c \
  /home/fast/esp/esp-idf/components/newlib/include/stdint.h \
  /home/fast/esp/esp-idf/components/newlib/include/sys/_intsup.h \
  /home/fast/esp/esp-idf/components/newlib/platform_include/assert.h \
- /home/fast/esp/hello_world/build/include/sdkconfig.h \
+ /home/fast/esp/hello_world_git/build/include/sdkconfig.h \
  /home/fast/esp/esp-idf/components/newlib/include/assert.h \
  /home/fast/esp/esp-idf/components/unity/include/unity_test_runner.h \
  /home/fast/esp/esp-idf/components/newlib/include/setjmp.h \
@@ -100,7 +100,7 @@ unity_runner.o: /home/fast/esp/esp-idf/components/unity/unity_runner.c \
 
 /home/fast/esp/esp-idf/components/newlib/platform_include/assert.h:
 
-/home/fast/esp/hello_world/build/include/sdkconfig.h:
+/home/fast/esp/hello_world_git/build/include/sdkconfig.h:
 
 /home/fast/esp/esp-idf/components/newlib/include/assert.h:
 

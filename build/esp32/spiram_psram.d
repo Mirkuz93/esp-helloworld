@@ -1,5 +1,5 @@
 spiram_psram.o: /home/fast/esp/esp-idf/components/esp32/spiram_psram.c \
- /home/fast/esp/hello_world/build/include/sdkconfig.h \
+ /home/fast/esp/hello_world_git/build/include/sdkconfig.h \
  /home/fast/esp/esp-idf/components/newlib/include/string.h \
  /home/fast/esp/esp-idf/components/newlib/include/_ansi.h \
  /home/fast/esp/esp-idf/components/newlib/include/newlib.h \
@@ -75,7 +75,7 @@ spiram_psram.o: /home/fast/esp/esp-idf/components/esp32/spiram_psram.c \
  /home/fast/esp/esp-idf/components/soc/esp32/include/soc/spi_struct.h \
  /home/fast/esp/esp-idf/components/driver/include/driver/periph_ctrl.h
 
-/home/fast/esp/hello_world/build/include/sdkconfig.h:
+/home/fast/esp/hello_world_git/build/include/sdkconfig.h:
 
 /home/fast/esp/esp-idf/components/newlib/include/string.h:
 

@@ -22,7 +22,7 @@ rmt.o: /home/fast/esp/esp-idf/components/driver/rmt.c \
  /home/fast/esp/esp-idf/components/newlib/include/alloca.h \
  /home/fast/esp/esp-idf/components/freertos/include/freertos/FreeRTOS.h \
  /home/fast/esp/esp-idf/components/freertos/include/freertos/FreeRTOSConfig.h \
- /home/fast/esp/hello_world/build/include/sdkconfig.h \
+ /home/fast/esp/hello_world_git/build/include/sdkconfig.h \
  /home/fast/esp/esp-idf/components/freertos/include/freertos/xtensa_config.h \
  /home/fast/esp/esp-idf/components/esp32/include/xtensa/hal.h \
  /home/fast/esp/esp-idf/components/esp32/include/xtensa/config/core.h \
@@ -139,7 +139,7 @@ rmt.o: /home/fast/esp/esp-idf/components/driver/rmt.c \
 
 /home/fast/esp/esp-idf/components/freertos/include/freertos/FreeRTOSConfig.h:
 
-/home/fast/esp/hello_world/build/include/sdkconfig.h:
+/home/fast/esp/hello_world_git/build/include/sdkconfig.h:
 
 /home/fast/esp/esp-idf/components/freertos/include/freertos/xtensa_config.h:
 

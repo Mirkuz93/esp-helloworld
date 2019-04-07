@@ -1,4 +1,5 @@
-hello_world_main.o: /home/fast/esp/hello_world/main/hello_world_main.c \
+hello_world_main.o: \
+ /home/fast/esp/hello_world_git/main/hello_world_main.c \
  /home/fast/esp/esp-idf/components/freertos/include/freertos/FreeRTOS.h \
  /home/fast/esp/esp-idf/components/newlib/include/sys/reent.h \
  /home/fast/esp/esp-idf/components/newlib/include/_ansi.h \
@@ -14,7 +15,7 @@ hello_world_main.o: /home/fast/esp/hello_world/main/hello_world_main.c \
  /home/fast/esp/esp-idf/components/newlib/include/stdint.h \
  /home/fast/esp/esp-idf/components/newlib/include/sys/_intsup.h \
  /home/fast/esp/esp-idf/components/freertos/include/freertos/FreeRTOSConfig.h \
- /home/fast/esp/hello_world/build/include/sdkconfig.h \
+ /home/fast/esp/hello_world_git/build/include/sdkconfig.h \
  /home/fast/esp/esp-idf/components/freertos/include/freertos/xtensa_config.h \
  /home/fast/esp/esp-idf/components/esp32/include/xtensa/hal.h \
  /home/fast/esp/esp-idf/components/esp32/include/xtensa/config/core.h \
@@ -141,7 +142,7 @@ hello_world_main.o: /home/fast/esp/hello_world/main/hello_world_main.c \
  /home/fast/esp/esp-idf/components/newlib/include/string.h \
  /home/fast/esp/esp-idf/components/newlib/include/sys/string.h \
  /home/fast/esp/esp-idf/components/mqtt/esp-mqtt/include/mqtt_config.h \
- /home/fast/esp/esp-idf/components/mqtt/esp-mqtt/include/mqtt_config.h \
+ /home/fast/esp/hello_world_git/components/md5/md5.h \
  /home/fast/esp/esp-idf/components/lwip/lwip/src/include/lwip/sockets.h \
  /home/fast/esp/esp-idf/components/lwip/lwip/src/include/lwip/err.h \
  /home/fast/esp/esp-idf/components/lwip/lwip/src/include/lwip/inet.h \
@@ -179,7 +180,7 @@ hello_world_main.o: /home/fast/esp/hello_world/main/hello_world_main.c \
 
 /home/fast/esp/esp-idf/components/freertos/include/freertos/FreeRTOSConfig.h:
 
-/home/fast/esp/hello_world/build/include/sdkconfig.h:
+/home/fast/esp/hello_world_git/build/include/sdkconfig.h:
 
 /home/fast/esp/esp-idf/components/freertos/include/freertos/xtensa_config.h:
 
@@ -433,7 +434,7 @@ hello_world_main.o: /home/fast/esp/hello_world/main/hello_world_main.c \
 
 /home/fast/esp/esp-idf/components/mqtt/esp-mqtt/include/mqtt_config.h:
 
-/home/fast/esp/esp-idf/components/mqtt/esp-mqtt/include/mqtt_config.h:
+/home/fast/esp/hello_world_git/components/md5/md5.h:
 
 /home/fast/esp/esp-idf/components/lwip/lwip/src/include/lwip/sockets.h:
 
@@ -446,4 +447,4 @@ hello_world_main.o: /home/fast/esp/hello_world/main/hello_world_main.c \
 /home/fast/esp/esp-idf/components/lwip/lwip/src/include/lwip/dns.h:
 
 /home/fast/esp/esp-idf/components/lwip/lwip/src/include/lwip/netdb.h:
-/home/fast/esp/hello_world/main/./hello_world_main.c:
+/home/fast/esp/hello_world_git/main/./hello_world_main.c:

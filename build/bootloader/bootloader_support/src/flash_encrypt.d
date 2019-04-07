@@ -3,7 +3,7 @@ src/flash_encrypt.o: \
  /home/fast/esp/esp-idf/components/bootloader_support/include_bootloader/bootloader_flash.h \
  /home/fast/esp/esp-idf/components/esp32/include/esp_err.h \
  /home/fast/esp/esp-idf/components/spi_flash/include/esp_spi_flash.h \
- /home/fast/esp/hello_world/build/bootloader/../include/sdkconfig.h \
+ /home/fast/esp/hello_world_git/build/bootloader/../include/sdkconfig.h \
  /home/fast/esp/esp-idf/components/bootloader_support/include/esp_image_format.h \
  /home/fast/esp/esp-idf/components/bootloader_support/include/esp_flash_partitions.h \
  /home/fast/esp/esp-idf/components/esp32/include/esp_flash_data_types.h \
@@ -45,7 +45,7 @@ src/flash_encrypt.o: \
 
 /home/fast/esp/esp-idf/components/spi_flash/include/esp_spi_flash.h:
 
-/home/fast/esp/hello_world/build/bootloader/../include/sdkconfig.h:
+/home/fast/esp/hello_world_git/build/bootloader/../include/sdkconfig.h:
 
 /home/fast/esp/esp-idf/components/bootloader_support/include/esp_image_format.h:
 
