@@ -92,8 +92,8 @@ CONFIG_MONITOR_BAUD=115200
 #
 # Config variables
 #
-CONFIG_WIFI_SSID="MSM-Wireless"
-CONFIG_WIFI_PSW="CiaoComeStai80171"
+CONFIG_WIFI_SSID="ESP32"
+CONFIG_WIFI_PSW="malnatiPDS"
 
 #
 # Partition Table

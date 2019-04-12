@@ -42,10 +42,44 @@ uint8_t toBlink = 0;
 #define WIFI_CHANNEL_SWITCH_INTERVAL  (500)
 #define WIFI_CHANNEL_MAX               (13)
 
+#define SSID_LEN (32)
+#define HASH_LEN (32)
+#define BUFFSIZE 1024 //size of buffer used to send data to the server
+#define NROWS 11 //max rows that buffer can have inside send_data, it can be changed modifying BUFFSIZE
+
 static const char *TAG = "ESPLOG";
 
 uint8_t level = 0, channel = 1;
 int i =0;
+unsigned int numProbesReceived = 0;
+
+typedef struct{
+	uint8_t	address[6];
+	char	ssid[SSID_LEN];
+	int		timestamp;
+	char	hash[HASH_LEN];
+	int8_t	rssi;
+	int		sn;
+	char	htci[5];
+} json_obj_t;
+
+void jsonToString(char *str, int size, json_obj_t *obj);
+
+void jsonToString(char *str, int size, json_obj_t *obj){
+	memset(str, '\0', size);
+	sprintf(str, "{");
+	sprintf(str, "addr: \"%02x:%02x:%02x:%02x:%02x:%02x\"",
+		obj->address[0], obj->address[1], obj->address[2], obj->address[3], obj->address[4], obj->address[5]);
+	if(obj->ssid[0]!='\0'){
+		sprintf(str, ", ssid: \"%s\"", obj->ssid);
+	}
+	sprintf(str, ", tstp: %d", obj->timestamp);
+	sprintf(str, ", hash: \"%s\"", obj->hash);
+	sprintf(str, ", rssi: %d", obj->rssi);
+	sprintf(str, ", sn: %d", obj->sn);
+	sprintf(str, ", htci: \"%s\"", obj->htci);
+	sprintf(str, "}");
+};
 
 //static wifi_country_t wifi_country = WIFI_COUNTRY_EU;
 
@@ -348,6 +382,9 @@ void wifi_sniffer_packet_handler(void* buff, wifi_promiscuous_pkt_type_t type)
     }
 	printf("\"");
   }
+  
+  printf(" #%u", ++numProbesReceived);
+  
   printf("\n");
   
   return;
