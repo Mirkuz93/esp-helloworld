@@ -21,7 +21,9 @@
 #include "md5.h"
 #include "driver/gpio.h"
 #include "sdkconfig.h"
-#include "apps/sntp/sntp.h"
+//#include "apps/sntp/sntp.h"
+#include "lwip/apps/sntp.h"
+#include <cJSON.h>
 
 #include <stdio.h>
 #include <stddef.h>
@@ -54,16 +56,88 @@ int i =0;
 //unsigned int numProbesReceived = 0;
 
 typedef struct{
-	uint8_t	address[6];
+	uint8_t	address[3][6];
 	char	ssid[SSID_LEN];
 	int		timestamp;
 	char	hash[HASH_LEN];
 	int8_t	rssi;
 	int		sn;
 	char	htci[5];
-} json_obj_t;
+} probe_t;
 
-void jsonToString(char *str, int size, json_obj_t *obj);
+char *create_json_probe(probe_t *probe_arg);
+
+char *create_json_probe(probe_t *probe_arg)
+{   
+    char *string = NULL;
+    //cJSON *htci = NULL;
+    //size_t index = 0;
+	char addr_str[24];
+    cJSON *probe = cJSON_CreateObject();
+    
+    sprintf(addr_str, "%02x:%02x:%02x:%02x:%02x:%02x",
+	probe_arg->address[0][0], probe_arg->address[0][1], probe_arg->address[0][2],
+	probe_arg->address[0][3], probe_arg->address[0][4], probe_arg->address[0][5]);
+	
+	if (cJSON_AddStringToObject(probe, "addr1", addr_str) == NULL)
+	{
+	    goto end_create_json_probe;
+	}
+	
+	sprintf(addr_str, "%02x:%02x:%02x:%02x:%02x:%02x",
+	probe_arg->address[1][0], probe_arg->address[1][1], probe_arg->address[1][2],
+	probe_arg->address[1][3], probe_arg->address[1][4], probe_arg->address[1][5]);
+	
+	if (cJSON_AddStringToObject(probe, "addr2", addr_str) == NULL)
+	{
+	    goto end_create_json_probe;
+	}
+	
+	sprintf(addr_str, "%02x:%02x:%02x:%02x:%02x:%02x",
+	probe_arg->address[2][0], probe_arg->address[2][1], probe_arg->address[2][2],
+	probe_arg->address[2][3], probe_arg->address[2][4], probe_arg->address[2][5]);
+	
+	if (cJSON_AddStringToObject(probe, "addr3", addr_str) == NULL)
+	{
+	    goto end_create_json_probe;
+	}
+	
+    if (cJSON_AddStringToObject(probe, "ssid", probe_arg->ssid) == NULL)
+    {
+        goto end_create_json_probe;
+    }
+    
+    if (cJSON_AddNumberToObject(probe, "timestamp", probe_arg->timestamp) == NULL)
+    {
+        goto end_create_json_probe;
+    }
+    
+    if (cJSON_AddStringToObject(probe, "hash", probe_arg->hash) == NULL)
+    {
+        goto end_create_json_probe;
+    }
+    
+    if (cJSON_AddNumberToObject(probe, "rssi", probe_arg->rssi) == NULL)
+    {
+        goto end_create_json_probe;
+    }
+    
+    if (cJSON_AddNumberToObject(probe, "sn", probe_arg->sn) == NULL)
+    {
+        goto end_create_json_probe;
+    }
+
+    string = cJSON_Print(probe);
+    if (string == NULL) {
+        fprintf(stderr, "Failed to print monitor.\n");
+    }
+
+end_create_json_probe:
+    cJSON_Delete(probe);
+    return string;
+}
+
+/*void jsonToString(char *str, int size, json_obj_t *obj);
 
 void jsonToString(char *str, int size, json_obj_t *obj){
 	memset(str, '\0', size);
@@ -79,7 +153,7 @@ void jsonToString(char *str, int size, json_obj_t *obj){
 	sprintf(str, ", sn: %d", obj->sn);
 	sprintf(str, ", htci: \"%s\"", obj->htci);
 	sprintf(str, "}");
-};
+};*/
 
 //static wifi_country_t wifi_country = WIFI_COUNTRY_EU;
 
@@ -341,7 +415,8 @@ void wifi_sniffer_set_channel(uint8_t channel)
 
 void wifi_sniffer_packet_handler(void* buff, wifi_promiscuous_pkt_type_t type)
 {
-  int i=0;
+  //int i=0;
+  probe_t received_probe;
   const wifi_promiscuous_pkt_t *ppkt = (wifi_promiscuous_pkt_t *)buff;
   const wifi_ieee80211_packet_t *ipkt = (wifi_ieee80211_packet_t *)ppkt->payload;
   const wifi_ieee80211_mac_hdr_t *hdr = &ipkt->hdr;
@@ -353,37 +428,63 @@ void wifi_sniffer_packet_handler(void* buff, wifi_promiscuous_pkt_type_t type)
   }
   
   BLINK_LED_ON = 1;
+ 
+  printf("\033[01;34mPROBE REQUEST!\033[0m\n");
   
-  printf("\033[22;31mPROBE REQUEST!\033[0m\n");
-  printf("TIME=%02d, CH=%02d, RSSI=%02d,"
+  /*printf("TIME=%02d, CH=%02d, RSSI=%02d,"
     " A1=%02x:%02x:%02x:%02x:%02x:%02x,"
     " A2=%02x:%02x:%02x:%02x:%02x:%02x,"
     " A3=%02x:%02x:%02x:%02x:%02x:%02x",
 	ppkt->rx_ctrl.timestamp,
     ppkt->rx_ctrl.channel,
     ppkt->rx_ctrl.rssi,
-    /* ADDR1 */
+    // ADDR1
     hdr->addr1[0],hdr->addr1[1],hdr->addr1[2],
     hdr->addr1[3],hdr->addr1[4],hdr->addr1[5],
-    /* ADDR2 */
+    // ADDR2
     hdr->addr2[0],hdr->addr2[1],hdr->addr2[2],
     hdr->addr2[3],hdr->addr2[4],hdr->addr2[5],
-    /* ADDR3 */
+    // ADDR3
     hdr->addr3[0],hdr->addr3[1],hdr->addr3[2],
     hdr->addr3[3],hdr->addr3[4],hdr->addr3[5]
-  );
+  );*/
 
   int l = (int)ipkt->payload[1];
+  char ssid[32] = {'\0'};
   //printf(" Typ:%d-Len:%d SSID:", (int)ipkt->payload[0],(int)ipkt->payload[1]);
   if ((int)ipkt->payload[0]==0) {
-	printf(", SSID=\"");
+	//printf(", SSID=\"");
     for(i=2;i<l+2;i++){
-      printf("%c",(char)ipkt->payload[i]);
+      //printf("%c",(char)ipkt->payload[i]);
+      sprintf(ssid + strlen(ssid), "%c", (char)ipkt->payload[i]);
     }
-	printf("\"");
+	//printf("\"");
   }
   
+	int addr_field_index;
+	for(addr_field_index = 0; addr_field_index<6; addr_field_index++){
+		received_probe.address[0][addr_field_index] = hdr->addr1[addr_field_index];
+	}
+	for(addr_field_index = 0; addr_field_index<6; addr_field_index++){
+		received_probe.address[1][addr_field_index] = hdr->addr2[addr_field_index];
+	}
+	for(addr_field_index = 0; addr_field_index<6; addr_field_index++){
+		received_probe.address[2][addr_field_index] = hdr->addr3[addr_field_index];
+	}
+	strcpy(received_probe.ssid, ssid);
+	received_probe.timestamp = ppkt->rx_ctrl.timestamp;
+	received_probe.hash[0] = '\0';
+	received_probe.rssi = ppkt->rx_ctrl.rssi;
+	received_probe.sn = 0;
+	received_probe.htci[0] = '\0';
+	received_probe.hash[1] = '\0';
+	received_probe.hash[2] = '\0';
+	received_probe.hash[3] = '\0';
+	received_probe.hash[4] = '\0';
+  
   //printf(" #%u", ++numProbesReceived);
+  
+  printf("%s", create_json_probe(&received_probe));
   
   printf("\n");
   
