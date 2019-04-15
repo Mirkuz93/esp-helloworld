@@ -51,7 +51,7 @@ static const char *TAG = "ESPLOG";
 
 uint8_t level = 0, channel = 1;
 int i =0;
-unsigned int numProbesReceived = 0;
+//unsigned int numProbesReceived = 0;
 
 typedef struct{
 	uint8_t	address[6];
@@ -383,7 +383,7 @@ void wifi_sniffer_packet_handler(void* buff, wifi_promiscuous_pkt_type_t type)
 	printf("\"");
   }
   
-  printf(" #%u", ++numProbesReceived);
+  //printf(" #%u", ++numProbesReceived);
   
   printf("\n");
   

@@ -92,8 +92,8 @@ CONFIG_MONITOR_BAUD=115200
 #
 # Config variables
 #
-CONFIG_WIFI_SSID="ESP32"
-CONFIG_WIFI_PSW="malnatiPDS"
+CONFIG_WIFI_SSID="B-evolution dehor"
+CONFIG_WIFI_PSW="bevolution"
 
 #
 # Partition Table
