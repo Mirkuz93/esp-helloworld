@@ -94,6 +94,7 @@ CONFIG_MONITOR_BAUD=115200
 #
 CONFIG_WIFI_SSID="B-evolution dehor"
 CONFIG_WIFI_PSW="bevolution"
+CONFIG_MQTT_BROKER_URI="mqtt://192.168.0.10:8080"
 
 #
 # Partition Table

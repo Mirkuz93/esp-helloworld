@@ -1,11 +1,15 @@
 menu "Config variables"
 
  config WIFI_SSID
-  string "String value"
+  string "WIFI ssid"
   default "wifi ssid"
 
  config WIFI_PSW
-  string "String value"
+  string "WIFI password"
   default "wifi password"
+  
+ config MQTT_BROKER_URI
+  string "MQTT broker URI"
+  default "mqtt://192.168.0.10:8080"
 
 endmenu

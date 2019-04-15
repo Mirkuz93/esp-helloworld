@@ -46,8 +46,8 @@ uint8_t toBlink = 0;
 
 #define SSID_LEN (32)
 #define HASH_LEN (32)
-#define BUFFSIZE 1024 //size of buffer used to send data to the server
-#define NROWS 11 //max rows that buffer can have inside send_data, it can be changed modifying BUFFSIZE
+#define JSON_OBJ_SIZE (512)
+#define PROBES_STRING_SIZE (4096 * JSON_OBJ_SIZE)
 
 static const char *TAG = "ESPLOG";
 
@@ -64,6 +64,36 @@ typedef struct{
 	int		sn;
 	char	htci[5];
 } probe_t;
+
+char probes_string[PROBES_STRING_SIZE];
+
+void open_probes_string();
+void close_probes_string();
+int available_probes_string(int size);
+
+int probes_open = 0; // da lockare
+
+void open_probes_string(){
+	memset(probes_string, 0, PROBES_STRING_SIZE * sizeof(char));
+	sprintf(probes_string, "{ ");
+}
+
+void close_probes_string(){
+	sprintf(probes_string + strlen(probes_string), " }");
+}
+
+/*int append_probe(){
+	if(!probes_open){
+		open_probes_string();
+	}
+}*/
+
+int available_probes_string(int size){
+	if(strlen(probes_string)+size<PROBES_STRING_SIZE-1){
+		return 1;
+	}
+	return 0;
+}
 
 char *create_json_probe(probe_t *probe_arg);
 
@@ -126,6 +156,11 @@ char *create_json_probe(probe_t *probe_arg)
     {
         goto end_create_json_probe;
     }
+    
+    if (cJSON_AddStringToObject(probe, "htci", probe_arg->htci) == NULL)
+    {
+        goto end_create_json_probe;
+    }
 
     string = cJSON_Print(probe);
     if (string == NULL) {
@@ -137,23 +172,19 @@ end_create_json_probe:
     return string;
 }
 
-/*void jsonToString(char *str, int size, json_obj_t *obj);
+static void get_hash(const uint8_t *data, int len_res, char hash[HASH_LEN]);
 
-void jsonToString(char *str, int size, json_obj_t *obj){
-	memset(str, '\0', size);
-	sprintf(str, "{");
-	sprintf(str, "addr: \"%02x:%02x:%02x:%02x:%02x:%02x\"",
-		obj->address[0], obj->address[1], obj->address[2], obj->address[3], obj->address[4], obj->address[5]);
-	if(obj->ssid[0]!='\0'){
-		sprintf(str, ", ssid: \"%s\"", obj->ssid);
-	}
-	sprintf(str, ", tstp: %d", obj->timestamp);
-	sprintf(str, ", hash: \"%s\"", obj->hash);
-	sprintf(str, ", rssi: %d", obj->rssi);
-	sprintf(str, ", sn: %d", obj->sn);
-	sprintf(str, ", htci: \"%s\"", obj->htci);
-	sprintf(str, "}");
-};*/
+static void get_hash(const uint8_t *data, int len_res, char hash[HASH_LEN])
+{
+	uint8_t pkt_hash[16];
+
+	md5((uint8_t *)data, len_res, pkt_hash);
+
+	sprintf(hash, "%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x",
+			pkt_hash[0], pkt_hash[1], pkt_hash[2], pkt_hash[3], pkt_hash[4], pkt_hash[5],
+			pkt_hash[6], pkt_hash[7], pkt_hash[8], pkt_hash[9], pkt_hash[10], pkt_hash[11],
+			pkt_hash[12], pkt_hash[13], pkt_hash[14], pkt_hash[15]);
+}
 
 //static wifi_country_t wifi_country = WIFI_COUNTRY_EU;
 
@@ -258,7 +289,7 @@ static void time_init()
     struct tm timeinfo;
     char strftime_buf[64];
 
-	ESP_LOGI(TAG, "Connecting to WiFi and getting time over NTP.");
+	ESP_LOGI(TAG, "Getting time over NTP.");
 	obtain_time();
 	time(&now);  //update 'now' variable with current time
 
@@ -346,7 +377,8 @@ static void mqtt_app_start(void)
 {
     const esp_mqtt_client_config_t mqtt_cfg = {
         // .uri = "mqtts://api.emitter.io:443",    // for mqtt over ssl
-        .uri = "mqtt://192.168.1.136:8080", //for mqtt over tcp
+        //.uri = "mqtt://192.168.1.136:8080", //for mqtt over tcp
+        .uri = CONFIG_MQTT_BROKER_URI, //for mqtt over tcp
         // .uri = "ws://api.emitter.io:8080", //for mqtt over websocket
         // .uri = "wss://api.emitter.io:443", //for mqtt over websocket secure
         .event_handle = mqtt_event_handler,
@@ -428,8 +460,14 @@ void wifi_sniffer_packet_handler(void* buff, wifi_promiscuous_pkt_type_t type)
   }
   
   BLINK_LED_ON = 1;
- 
-  printf("\033[01;34mPROBE REQUEST!\033[0m\n");
+  
+  int l = (int)ipkt->payload[1];
+  char ssid[SSID_LEN] = "\0";
+  char hash[HASH_LEN] = "\0";
+  char htci[5] = "\0";
+  int pkt_len = 0;
+  
+  char json_probe[JSON_OBJ_SIZE] = "\0";
   
   /*printf("TIME=%02d, CH=%02d, RSSI=%02d,"
     " A1=%02x:%02x:%02x:%02x:%02x:%02x,"
@@ -448,9 +486,7 @@ void wifi_sniffer_packet_handler(void* buff, wifi_promiscuous_pkt_type_t type)
     hdr->addr3[0],hdr->addr3[1],hdr->addr3[2],
     hdr->addr3[3],hdr->addr3[4],hdr->addr3[5]
   );*/
-
-  int l = (int)ipkt->payload[1];
-  char ssid[32] = {'\0'};
+  
   //printf(" Typ:%d-Len:%d SSID:", (int)ipkt->payload[0],(int)ipkt->payload[1]);
   if ((int)ipkt->payload[0]==0) {
 	//printf(", SSID=\"");
@@ -473,20 +509,22 @@ void wifi_sniffer_packet_handler(void* buff, wifi_promiscuous_pkt_type_t type)
 	}
 	strcpy(received_probe.ssid, ssid);
 	received_probe.timestamp = ppkt->rx_ctrl.timestamp;
-	received_probe.hash[0] = '\0';
+	pkt_len = ppkt->rx_ctrl.sig_len;
+	get_hash(ppkt->payload, pkt_len-4, hash);
+	strcpy(received_probe.hash, hash);
 	received_probe.rssi = ppkt->rx_ctrl.rssi;
 	received_probe.sn = 0;
-	received_probe.htci[0] = '\0';
-	received_probe.hash[1] = '\0';
-	received_probe.hash[2] = '\0';
-	received_probe.hash[3] = '\0';
-	received_probe.hash[4] = '\0';
+	strcpy(received_probe.htci, htci);
   
   //printf(" #%u", ++numProbesReceived);
   
-  printf("%s", create_json_probe(&received_probe));
+  printf("\033[01;34mPROBE REQUEST!\033[0m\n");
   
-  printf("\n");
+  strcpy(json_probe, create_json_probe(&received_probe));
+  
+  printf("%s\n", json_probe);
+  
+  //printf("json string length: %d\n", strlen(json_probe));
   
   return;
 }
